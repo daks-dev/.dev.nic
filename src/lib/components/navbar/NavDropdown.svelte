@@ -64,7 +64,7 @@
     text-gray-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:text-white
     border-b border-gray-100 md:border-0 dark:border-gray-700
     md:hover:text-blue-700 select-none`;
-  const activeClass = 'text-blue-700 dark:text-gray-200';
+  const activeClass = 'text-cyan-700 dark:text-gray-200';
 
   $: activeUrl = $page.url.pathname;
 </script>
@@ -75,7 +75,7 @@
   <button
     on:click|preventDefault={toggle}
     on:dblclick|preventDefault={handleDblClick}
-    class={classNames(liButtonClass, (active || step) && 'text-blue-700 dark:text-gray-200')}>
+    class={classNames(liButtonClass, (active || step) && 'text-cyan-700 dark:text-gray-200')}>
     {link.label}
     <svg
       class={classNames(

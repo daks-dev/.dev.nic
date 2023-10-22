@@ -13,20 +13,27 @@
   export let links: Partial<NavItem>[] = [];
   export let root = '';
 
-  const itemClass = '!text-sm dark:!text-gray-400 select-none';
+  const itemClass =
+    'text-sm dark:!text-gray-400 select-none page:disabled page:!text-cyan-700 page:dark:!text-gray-200';
   /*{
     'text-base': false,
     'text-sm': true,
     'dark:text-white': false,
     'dark:text-gray-400': true
   }*/
-  const itemStepClass = '!text-sm select-none';
+  const itemStepClass = 'text-sm select-none';
   /*{
     'text-base': false,
     'text-sm': true
   }*/
 
   $: activeUrl = $page.url.pathname;
+  $: current = (href: Attribute) =>
+    $page.url.pathname === href || $page.url.pathname === `${href}/`
+      ? 'page'
+      : $page.url.pathname.indexOf(`${href}/`) >= 0
+      ? 'step'
+      : undefined;
 </script>
 
 <SidebarGroup {...$$restProps}>
@@ -43,13 +50,15 @@
           {active}
           isOpen={step}>
           {#each link.links as item}
+            {@const __href = `${href}${item.href}`}
             <SidebarDropdownItem
               color="custom"
               class={itemClass}
               label={item.label}
-              href={href + item.href}
+              href={__href}
               target={item.target}
-              active={activeUrl === href + item.href} />
+              aria-current={current(__href)}
+              active={activeUrl === __href} />
           {/each}
         </SidebarDropdownWrapper>
       {:else}
@@ -59,6 +68,7 @@
           label={link.label}
           {href}
           target={link.target}
+          aria-current={current(href)}
           {active} />
       {/if}
     {/each}

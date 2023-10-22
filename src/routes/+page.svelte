@@ -97,11 +97,6 @@
   </header>
 
   <div class="placeholders content">
-    <div
-      class="
-      bg-waiting bg-25%
-      sm:bg-20% lg:bg-10% h-20 w-20 bg-center bg-no-repeat" />
-
     <div class="mb-16 grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
       <ImagePlaceholder />
       <TextPlaceholder />

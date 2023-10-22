@@ -22,6 +22,12 @@
   //const color: any = 'primary';
 
   $: activeUrl = $page.url.pathname;
+  $: current = (href: Attribute) =>
+    $page.url.pathname === href || $page.url.pathname === `${href}/`
+      ? 'page'
+      : $page.url.pathname.indexOf(`${href}/`) >= 0
+      ? 'step'
+      : undefined;
 </script>
 
 {#if scope.length}
@@ -77,10 +83,14 @@
         {@const home = link.href === '/'}
         <NavLi
           on:click={close}
-          class={classNames('cursor-pointer select-none', home && 'hidden md:block')}
+          class={classNames(
+            'page:disabled page:text-cyan-700 page:dark:text-gray-200',
+            'cursor-pointer select-none',
+            home && 'hidden md:block'
+          )}
           href={link.href}
           target={link.target}
-          {active}>
+          aria-current={current(link.href)}>
           {#if home}
             <Icon
               icon={`line-md:home-simple${active ? '-twotone' : ''}`}
