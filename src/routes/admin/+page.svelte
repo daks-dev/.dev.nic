@@ -31,7 +31,7 @@
       class="
         hover:drop-shadow-deep transition-easy w-24 drop-shadow-md hover:scale-105
         sm:w-32"
-      href="https://github.com/daks-dev/daks-nic"
+      href="https://github.com/daks-dev/.dev.nic"
       target="_blank">
       <img
         class="h-auto w-full"
