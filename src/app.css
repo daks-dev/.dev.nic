@@ -7,10 +7,10 @@
   }
 
   body {
-    @apply -lg:snap-start
-           relative bg-neutral-100
-           text-gray-800 dark:bg-gray-800
-           dark:text-neutral-100;
+    @apply relative
+           bg-neutral-100 text-gray-800
+           dark:bg-gray-800 dark:text-neutral-100
+           -lg:snap-start;
   }
 
   h1 {
@@ -34,8 +34,8 @@
   }
 
   .title {
-    @apply after:content-null after:mt-4 after:block
-           after:h-[5px] after:w-[25vw] after:bg-cyan-600 after:dark:bg-cyan-700 sm:after:w-[20vw]
+    @apply after:mt-4 after:block after:h-[5px]
+           after:w-[25vw] after:bg-cyan-600 after:content-null after:dark:bg-cyan-700 sm:after:w-[20vw]
            lg:after:w-[15vw] 2xl:after:w-[10vw];
   }
 }

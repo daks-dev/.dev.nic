@@ -12,17 +12,17 @@
   //export let child = [];
 
   export let dropdownDiv = `
-    md:absolute z-10
-    w-full md:w-max md:max-w-xs mt-2 md:mt-12
+  bp:absolute z-10
+    w-full bp:w-max bp:max-w-xs mt-2 bp:mt-12
     text-gray-700 dark:text-gray-400
-    md:rounded
-    md:bg-white md:dark:bg-gray-700
+    bp:rounded
+    bp:bg-white bp:dark:bg-gray-700
     outline-none
     divide-y divide-gray-100 dark:divide-gray-600`;
 
   export let dropdownLinkClassWithChild = `
     block py-2 px-4
-    md:font-medium md:text-sm
+    bp:font-medium bp:text-sm
     hover:bg-gray-100 dark:hover:bg-gray-600`;
 
   export let rel: Attribute = undefined;
@@ -60,10 +60,10 @@
   };
 
   const liClass = `
-    flex flex-col items-center py-2 pr-4 pl-3 md:p-0
-    text-gray-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:text-white
-    border-b border-gray-100 md:border-0 dark:border-gray-700
-    md:hover:text-blue-700 select-none`;
+    flex flex-col items-center py-2 pr-4 pl-3 bp:p-0
+    text-gray-700 dark:text-gray-400 bp:dark:hover:text-white dark:hover:text-white
+    border-b border-gray-100 bp:border-0 dark:border-gray-700
+    bp:hover:text-blue-700 select-none`;
   const activeClass = 'text-cyan-700 dark:text-gray-200';
 
   $: activeUrl = $page.url.pathname;
@@ -100,8 +100,8 @@
       <slot>
         <ul
           class="
-            -md:ml-1 -md:border-l-2 border-dotted
-            border-gray-700 dark:border-gray-500 md:pb-2 md:pt-1"
+            border-dotted border-gray-700 dark:border-gray-500
+            -bp:ml-1 -bp:border-l-2 bp:pb-2 bp:pt-1"
           aria-labelledby="dropdownLargeButton">
           {#each link.links as item}
             {@const href = `${link.href}${item.href}`}

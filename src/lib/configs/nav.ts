@@ -76,6 +76,11 @@ export const nav: NavSite = {
   footer: {
     links: [
       {
+        href: '/admin',
+        label: 'ic:outline-settings', // &#128736;
+        disallow: true
+      },
+      {
         href: '/permissions',
         label: 'Допуски'
       },
@@ -86,11 +91,6 @@ export const nav: NavSite = {
       {
         href: '/contacts',
         label: 'Контакты'
-      },
-      {
-        href: '/admin',
-        label: 'ic:outline-settings', // &#128736;
-        disallow: true
       }
     ]
   }

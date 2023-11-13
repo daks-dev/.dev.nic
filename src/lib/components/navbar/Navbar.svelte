@@ -40,8 +40,8 @@
   let:hidden
   let:toggle
   class="
-    dark:bg-primary-700 overflow-offset fixed left-0 top-0 z-40
-    shadow-md"
+    overflow-offset fixed left-0 top-0 z-40 shadow-md
+    dark:bg-primary-700"
   color="navbar">
   {@const close = () => hidden || toggle()}
 
@@ -57,17 +57,17 @@
     </span-->
   </NavBrand>
 
-  <DarkMode class="ml-auto md:order-last md:ml-0" />
+  <DarkMode class="ml-auto bp:order-last bp:ml-0" />
 
   <NavHamburger
     on:click={toggle}
     class="ml-4" />
 
   <NavUl
-    class="border-none !bg-transparent"
-    divClass="
-      w-full md:block md:w-auto
-      max-h-screen--navbar overflow-y-auto"
+    class="
+      max-h-screen--navbar w-full overflow-y-auto
+      bp:block bp:w-auto"
+    classUl="border-none bg-inherit dark:bg-inherit"
     {hidden}>
     {#each links as link}
       {@const active = activeUrl === link.href}
@@ -84,9 +84,9 @@
         <NavLi
           on:click={close}
           class={classNames(
-            'page:disabled page:text-cyan-700 page:dark:text-gray-200',
+            'page:text-cyan-700 page:disabled page:dark:text-gray-200',
             'cursor-pointer select-none',
-            home && 'hidden md:block'
+            home && 'hidden bp:block'
           )}
           href={link.href}
           target={link.target}

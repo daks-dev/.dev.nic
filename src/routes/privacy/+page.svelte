@@ -22,7 +22,7 @@
     </h1>
   </header>
 
-  <div class="content readable text-slate-700 dark:text-slate-300">
+  <div class="readable content text-slate-700 dark:text-slate-300">
     <div>
       Настоящая Политика конфиденциальности персональных данных (далее &mdash; Политика
       конфиденциальности) действует в отношении всей информации, которую сайт

@@ -26,13 +26,13 @@
   <div
     class="
       wrapper
-      bg-waiting bg-25% sm:bg-20% lg:bg-10% bg-center bg-no-repeat">
+      bg-waiting bg-25% bg-center bg-no-repeat sm:bg-20% lg:bg-10%">
     <object
       bind:this={node}
       on:load={onload}
       class="
         lazy
-        w-inherit max-h-screen--navbar h-screen opacity-0
+        max-h-screen--navbar h-screen w-inherit opacity-0
         shadow-lg shadow-slate-500
         transition-opacity duration-500 md:pt-3"
       type="application/pdf"

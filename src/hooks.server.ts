@@ -4,9 +4,10 @@ import type { Handle } from '@sveltejs/kit';
 
 DEV && iconkit();
 
-const redirects: any = {
+const redirects: Record<string, string> = {
   // '': ''
 };
+
 export const handle: Handle = async ({ event, resolve }) => {
   if (event.url.pathname in redirects) {
     return new Response(undefined, {

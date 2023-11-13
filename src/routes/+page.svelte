@@ -42,7 +42,7 @@
           один из лидеров на строительном рынке в области консалтинга, лабораторного сопровождения
           строительства, обследования зданий и сооружений
         </p>
-        <div class="xs:hidden flex justify-around">
+        <div class="flex justify-around xs:hidden">
           <Button
             href="tel://{telephone.replace(/[\s-()]/g, '')}"
             class="shadow-md shadow-slate-500/20"
@@ -64,8 +64,8 @@
         </div>
         <div
           class="
-            xs:flex hidden flex-col gap-y-2
-            text-slate-600 dark:text-slate-400">
+            hidden flex-col gap-y-2 text-slate-600
+            dark:text-slate-400 xs:flex">
           <a
             class="
               text-3xl font-semibold transition duration-200

@@ -1,2 +1,2 @@
-import Navbar from './Navbar.svelte'
+import Navbar from './Navbar.svelte';
 export default Navbar;

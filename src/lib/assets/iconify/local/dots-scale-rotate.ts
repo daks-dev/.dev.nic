@@ -55,9 +55,9 @@ addIcon('custom:dots-scale-rotate', {
       values="360 12 12;0 12 12" />
   </g>
   `
-  .trim()
-  .replace(/\s{2,}/g, ' ')
-  .replace(/\n/g, ''),
+    .trim()
+    .replace(/\s{2,}/g, ' ')
+    .replace(/\n/g, ''),
   width: 24,
   height: 24
 });

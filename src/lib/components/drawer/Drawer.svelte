@@ -48,7 +48,7 @@
 
 <Drawer
   bind:hidden
-  width="w-80 md:w-96 overflow-x-hidden"
+  width="w-80 bp:w-96 overflow-x-hidden"
   transitionType="fly"
   {transitionParams}
   id="driver">

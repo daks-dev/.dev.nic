@@ -25,17 +25,7 @@
     "twotone-dark-mode",
     "twotone-light-mode"
   ],
-  "svg-spinners": [
-    "180-ring-with-bg",
-    "8-dots-rotate",
-    "clock"
-  ],
-  "mdi": [
-    "cube",
-    "cube-outline",
-    "transfer-up"
-  ],
-  "wpf": [
-    "search"
-  ]
+  "svg-spinners": ["180-ring-with-bg", "8-dots-rotate", "clock"],
+  "mdi": ["cube", "cube-outline", "transfer-up"],
+  "wpf": ["search"]
 }

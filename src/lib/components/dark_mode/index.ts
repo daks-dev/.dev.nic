@@ -1,2 +1,2 @@
-import DarkMode from './DarkMode.svelte'
+import DarkMode from './DarkMode.svelte';
 export default DarkMode;

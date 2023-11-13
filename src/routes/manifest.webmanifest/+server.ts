@@ -11,7 +11,7 @@ const pathname = process.env.APP_CANONICAL ? new URL(process.env.APP_CANONICAL).
 const any = [128, 192, 256, 384, 512];
 const maskable = [192, 384, 512];
 const monochrome = [128, 192, 256];
-const icons: any[] = [];
+const icons: Record<string, string>[] = [];
 const push = (arr = any, purpose = 'any') => {
   arr.forEach((val) => {
     const png = typeof val === 'number';
