@@ -27,6 +27,13 @@ const config = {
   },
 
   kit: {
+    /*
+    csp: {
+      directives: { 'script-src': ['self'] },
+      reportOnly: { 'script-src': ['self'] }
+    },
+    */
+
     alias: {
       $iconify: resolve(__dirname, 'src/lib/assets/iconify')
     },

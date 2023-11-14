@@ -1,15 +1,26 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { twJoin } from 'tailwind-merge';
   import { YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
   const title = 'НИЦ СЭ • Регламент';
   const description =
     'Регламент АО НИЦ «Строительная экспертиза» по организации и проведения негосударственной экспертизы проектной документации и результатов инженерных изысканий';
 
-  let node: HTMLElement;
-  const onload = () => node.classList.remove('opacity-0');
+  let node: HTMLObjectElement;
 
-  onMount(() => document?.lazyload.update());
+  /*
+  const handle = () => {
+    console.log('validity:', node.validity);
+    node.classList.remove('opacity-0');
+  };
+  */
+
+  onMount(() => {
+    document?.lazyload.update();
+    const timeout = setTimeout(() => node.classList.remove('opacity-0'), 150);
+    return () => clearTimeout(timeout);
+  });
 </script>
 
 <YandexMetrikaHit
@@ -17,28 +28,44 @@
   {description} />
 
 <main
-  class="mb-0 min-h-screen"
+  class="wrapper mb-0 grow"
   itemprop="mainContentOfPage">
   <header class="content sr-only">
     <h1 class="title">Регламент</h1>
   </header>
 
-  <div
-    class="
-      wrapper
-      bg-waiting bg-25% bg-center bg-no-repeat sm:bg-20% lg:bg-10%">
-    <object
-      bind:this={node}
-      on:load={onload}
-      class="
-        lazy
-        max-h-screen--navbar h-screen w-inherit opacity-0
-        shadow-lg shadow-slate-500
-        transition-opacity duration-500 md:pt-3"
-      type="application/pdf"
-      data-src="/docs/regulation.pdf"
-      title="Регламент АО НИЦ «Строительная экспертиза»"
-      aria-label="регламент" />
-    <link href="/docs/regulation.pdf" />
-  </div>
+  <!--div class="wrapper flex grow"-->
+  <object
+    bind:this={node}
+    class={twJoin(
+      'lazy',
+      'md:pt-3',
+      'flex grow',
+      'bg-radial-c',
+      'from-neutral-400 to-transparent',
+      'dark:from-gray-600',
+      'opacity-0',
+      'transition-opacity duration-500'
+    )}
+    type="application/pdf"
+    data-src="/docs/regulation.compressed.pdf"
+    title="Регламент АО НИЦ «Строительная экспертиза»"
+    aria-label="регламент">
+    <!--embed
+        class="h-full w-full"
+        src="https://docs.google.com/viewer?url=https://stroyexp.info/docs/regulation.pdf&embedded=true" /-->
+    <a
+      class={twJoin(
+        'mx-auto self-center',
+        'sm:text-md tracking-wide',
+        'button rounded-sm border border-slate-500',
+        'bg-neutral-300 oversee:bg-slate-500 dark:bg-slate-700'
+      )}
+      href="/docs/regulation.compressed.pdf"
+      target="_blank">
+      загрузить
+    </a>
+  </object>
+  <!--link href="/docs/regulation.compressed.pdf" /-->
+  <!--/div-->
 </main>
