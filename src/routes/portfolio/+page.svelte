@@ -15,12 +15,12 @@
   {description} />
 
 <main itemprop="mainContentOfPage">
-  <header class="content">
+  <header class="wrapper-lg">
     <h1 class="title">Недавние проекты</h1>
   </header>
 
   <LightboxKit
-    class="wrapper gap-8"
+    class="gap-8 wrapper-xl"
     custom={{
       overlay: 'overflow-offset'
     }}

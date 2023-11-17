@@ -27,7 +27,7 @@
   {title} />
 
 <main>
-  <header class="content flex items-center gap-x-4">
+  <header class="flex items-center gap-x-4 wrapper-lg">
     <a
       class="
         transition-easy text-slate-500 hover:scale-125
@@ -52,7 +52,7 @@
   </header>
 
   {#if DEV}
-    <div class="content mb-8 flex items-center justify-start">
+    <div class="mb-8 flex items-center justify-start wrapper-lg">
       <button
         on:click|preventDefault={upload}
         type="button"
@@ -74,7 +74,7 @@
     </div>
   {/if}
 
-  <div class="content divide-y divide-dotted">
+  <div class="divide-y divide-dotted wrapper-lg">
     {#if data.custom.length}
       <Bundle
         prefix="custom"

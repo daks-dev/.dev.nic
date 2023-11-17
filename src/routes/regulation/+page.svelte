@@ -28,13 +28,13 @@
   {description} />
 
 <main
-  class="wrapper mb-0 grow"
+  class="mb-0 grow wrapper-xl"
   itemprop="mainContentOfPage">
-  <header class="content sr-only">
+  <header class="sr-only wrapper-lg">
     <h1 class="title">Регламент</h1>
   </header>
 
-  <!--div class="wrapper flex grow"-->
+  <!--div class="wrapper-xl flex grow"-->
   <object
     bind:this={node}
     class={twJoin(
@@ -57,7 +57,7 @@
     <a
       class={twJoin(
         'mx-auto self-center',
-        'sm:text-md tracking-wide',
+        'tracking-wide sm:text-base',
         'button rounded-sm border border-slate-500',
         'bg-neutral-300 oversee:bg-slate-500 dark:bg-slate-700'
       )}

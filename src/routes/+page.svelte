@@ -22,7 +22,7 @@
   {description} />
 
 <main itemprop="mainContentOfPage">
-  <header class="wrapper">
+  <header class="wrapper-xl">
     <div class="grid w-full gap-8 pt-8 lg:grid-cols-12">
       <div class="mr-auto place-self-center lg:col-span-7 2xl:col-span-8">
         <h1
@@ -96,7 +96,7 @@
     </div>
   </header>
 
-  <div class="placeholders content">
+  <div class="placeholders wrapper-lg">
     <div class="mb-16 grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
       <ImagePlaceholder />
       <TextPlaceholder />

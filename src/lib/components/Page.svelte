@@ -17,11 +17,11 @@
   {description} />
 
 <main itemprop="mainContentOfPage">
-  <header class="content">
+  <header class="wrapper-lg">
     <h1 class="title">{name}</h1>
   </header>
 
-  <div class="placeholders content">
+  <div class="placeholders wrapper-lg">
     <div class="mb-12 grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
       <ImagePlaceholder />
       <TextPlaceholder />
