@@ -5,7 +5,9 @@ const PRIORITY = 0.7;
 const CHANGEFREG = 'weekly'; // daily weekly monthly
 const TIMESTAMP = new Date().toISOString();
 
-const canonical = process.env.APP_CANONICAL && new URL(process.env.APP_CANONICAL).origin;
+const canonical = process.env.PUBLIC_APP_CANONICAL
+  ? new URL(process.env.PUBLIC_APP_CANONICAL).origin
+  : '';
 
 const urlset =
   canonical &&

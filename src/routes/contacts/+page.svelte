@@ -1,9 +1,22 @@
 <script lang="ts">
-  import { YandexMetrikaHit, Contacts, YandexMap } from '@daks.dev/svelte.sdk';
+  import { onMount } from 'svelte';
+  import {
+    Contacts,
+    LightboxList,
+    LightboxThumbnail,
+    LightboxModal,
+    Sign,
+    YandexMap,
+    YandexMetrikaHit
+  } from '@daks.dev/svelte.sdk';
+
+  import type { PageData } from './$types';
+  export let data: PageData;
+  const { thumbnail, sources } = data;
 
   import microdata from '$lib/configs/microdata';
 
-  const data = {
+  const dataset = {
     locations: [
       {
         geometry: [55.771174, 37.60589],
@@ -33,6 +46,8 @@
 
   const title = 'НИЦ СЭ • Контакты ';
   const description = 'Контакты АО НИЦ «Строительная экспертиза»';
+
+  onMount(() => document?.lazyload.update());
 </script>
 
 <YandexMetrikaHit
@@ -46,9 +61,43 @@
     <h1 class="title">Контакты</h1>
   </header>
 
-  <Contacts
-    class="wrapper-lg"
-    {microdata} />
+  <div class="flex items-center justify-around gap-8 wrapper-lg">
+    <Contacts
+      class="wrapper-lg"
+      {microdata} />
+
+    <LightboxList
+      class="group relative -sm:hidden md:shrink-0"
+      custom={{ overlay: 'overflow-offset' }}
+      options={{ behaviour: 'loop' }}
+      loader={() => document?.lazyload.update()}
+      title="«Строительная экспертиза»"
+      description="АО Научно Исследовательский Центр">
+      <svelte:fragment slot="thumbnail">
+        <LightboxThumbnail>
+          <Sign
+            class="left-5 top-2"
+            icon="ic:round-zoom-out-map"
+            dark />
+          <img
+            class="
+            transition-easy
+            mx-3 rounded-md
+            drop-shadow-md transition-transform
+            duration-300 oversee:scale-105 oversee:drop-shadow-lg"
+            {...thumbnail}
+            alt="" />
+        </LightboxThumbnail>
+      </svelte:fragment>
+      {#each sources as source}
+        <LightboxModal>
+          <img
+            {...source}
+            alt="" />
+        </LightboxModal>
+      {/each}
+    </LightboxList>
+  </div>
 
   <div
     class="
@@ -60,6 +109,6 @@
         'bg-gray-200 bg-waiting bg-25% bg-center bg-no-repeat sm:bg-20% md:bg-10% xl:bg-5%',
         'border-4 border-slate-400'
       ]}
-      {data} />
+      data={dataset} />
   </div>
 </main>

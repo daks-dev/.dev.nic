@@ -34,7 +34,6 @@
     <h1 class="title">Регламент</h1>
   </header>
 
-  <!--div class="wrapper-xl flex grow"-->
   <object
     bind:this={node}
     class={twJoin(
@@ -48,7 +47,7 @@
       'transition-opacity duration-500'
     )}
     type="application/pdf"
-    data-src="/docs/regulation.compressed.pdf"
+    data-src="/docs/regulation.pdf"
     title="Регламент АО НИЦ «Строительная экспертиза»"
     aria-label="регламент">
     <!--embed
@@ -61,11 +60,9 @@
         'button rounded-sm border border-slate-500',
         'bg-neutral-300 oversee:bg-slate-500 dark:bg-slate-700'
       )}
-      href="/docs/regulation.compressed.pdf"
+      href="/docs/regulation.pdf"
       target="_blank">
       загрузить
     </a>
   </object>
-  <!--link href="/docs/regulation.compressed.pdf" /-->
-  <!--/div-->
 </main>
