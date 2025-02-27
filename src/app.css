@@ -1,0 +1,57 @@
+@import '@daks.dev/svelte.sdk/fonts/open-sans/variable';
+@import '@daks.dev/svelte.sdk/tailwind';
+
+@layer base {
+  :root {
+    --navbar-height: 60px;
+  }
+
+  body {
+    @apply relative
+           bg-neutral-100 text-gray-800
+           dark:bg-gray-800 dark:text-neutral-100
+           -lg:snap-start;
+  }
+
+  h1 {
+    @apply text-4xl font-semibold
+           tracking-tight text-slate-700 dark:text-slate-300
+           md:text-5xl lg:text-6xl;
+  }
+}
+
+@layer utilities {
+  .min-h-screen--navbar {
+    min-height: calc(100vh - var(--navbar-height));
+  }
+  .max-h-screen--navbar {
+    max-height: calc(100vh - var(--navbar-height));
+  }
+
+  .snap-start,
+  .snap-center {
+    scroll-margin-top: var(--navbar-height);
+  }
+
+  .title {
+    @apply after:mt-4 after:block after:h-[5px]
+           after:w-[25vw] after:bg-cyan-600 after:content-null after:dark:bg-cyan-700 sm:after:w-[20vw]
+           lg:after:w-[15vw] 2xl:after:w-[10vw];
+  }
+}
+
+main,
+[role='main'] {
+  @apply mb-8 flex flex-col;
+  padding-top: var(--navbar-height);
+}
+main > header,
+[role='main'] > header {
+  @apply mb-12 pt-8 sm:pt-12
+         md:mb-16 md:pt-16 xl:mb-20;
+}
+
+/* --- */
+.placeholders {
+  @apply text-slate-600 dark:text-slate-400;
+}
