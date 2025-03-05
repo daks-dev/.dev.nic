@@ -1,0 +1,55 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "check",
+      "problemMatcher": ["$tsc"],
+      "label": "check",
+      "detail": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
+    },
+    {
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": ["$tsc"],
+      "label": "dev",
+      "detail": "vite dev --port=3000"
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "group": "build",
+      "problemMatcher": ["$tsc"],
+      "label": "build",
+      "detail": "vite build"
+    },
+    {
+      "type": "npm",
+      "script": "preview",
+      "problemMatcher": ["$tsc"],
+      "label": "preview",
+      "detail": "vite preview --port=3000"
+    },
+    {
+      "type": "npm",
+      "script": "lint",
+      "problemMatcher": ["$tsc"],
+      "label": "lint",
+      "detail": "pnpm lint"
+    },
+    {
+      "type": "npm",
+      "script": "format",
+      "problemMatcher": ["$tsc"],
+      "label": "format",
+      "detail": "pnpm format"
+    },
+    {
+      "type": "npm",
+      "script": "run:update",
+      "problemMatcher": ["$tsc"],
+      "label": "update",
+      "detail": "pnpm up"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  // "typescript.inlayHints.parameterNames.enabled": "all",
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  }
+  // "prettier.configPath": "../../.prettierrc",
+  // "prettier.ignorePath": "../../.prettierignore"
+}
