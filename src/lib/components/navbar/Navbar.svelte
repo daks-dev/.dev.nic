@@ -1,6 +1,6 @@
 <script lang="ts">
   import classNames from 'classnames';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { Navbar, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
   import { Nav, Swiping, Icon } from '@daks.dev/svelte.sdk';
   import { DarkMode } from '$lib/components';
@@ -8,11 +8,18 @@
   import Dropdown from './NavDropdown.svelte';
   import type { NavItem } from '@daks.dev/svelte.sdk';
 
-  export let links: Partial<NavItem>[];
+  type Props = {
+    links: NavItem[];
+    scope?: ReturnType<typeof Nav.map>;
+    paging?: boolean;
+  };
+  const { links, scope = Nav.map(links, true), paging = false, ...rest }: Props = $props();
+
+  /*
+  export let links: NavItem[];
   export let scope = Nav.map(links, true);
   export let paging = false;
 
-  /*
   const darkmodebtn = `
     p-2.5 rounded-lg text-lg text-gray-500 dark:text-gray-400
     hover:bg-gray-100 dark:hover:bg-gray-700
@@ -21,13 +28,14 @@
 
   //const color: any = 'primary';
 
-  $: activeUrl = $page.url.pathname;
-  $: current = (href: Attribute) =>
-    $page.url.pathname === href || $page.url.pathname === `${href}/`
+  let activeUrl = $derived(page.url.pathname);
+  let current = $derived((href: Attribute) => {
+    return page.url.pathname === href || page.url.pathname === `${href}/`
       ? 'page'
-      : $page.url.pathname.indexOf(`${href}/`) >= 0
+      : page.url.pathname.indexOf(`${href}/`) >= 0
         ? 'step'
         : undefined;
+  });
 </script>
 
 {#if scope.length}
@@ -93,7 +101,7 @@
             'cursor-pointer select-none',
             home && 'bp:block hidden'
           )}
-          href={link.href}
+          href={link.href ?? undefined}
           target={link.target}
           aria-current={current(link.href)}>
           {#if home}
