@@ -1,0 +1,79 @@
+/* @import '@daks.dev/svelte.sdk/fonts/open-sans/variable'; */
+@import '@daks.dev/svelte.sdk/tailwind';
+
+@source './';
+@source '../node_modules/flowbite-svelte/dist';
+
+@plugin 'flowbite/plugin';
+
+@theme {
+  --breakpoint-bp: 48rem;
+
+  --font-sans:
+    'Open Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --navbar-height: 60px;
+
+  --color-primary-*: initial;
+  --color-primary-50: oklch(0.984 0.003 247.858);
+  --color-primary-100: oklch(0.968 0.007 247.896);
+  --color-primary-200: oklch(0.929 0.013 255.508);
+  --color-primary-300: oklch(0.869 0.022 252.894);
+  --color-primary-400: oklch(0.704 0.04 256.788);
+  --color-primary-500: oklch(0.554 0.046 257.417);
+  --color-primary-600: oklch(0.446 0.043 257.281);
+  --color-primary-700: oklch(0.372 0.044 257.287);
+  --color-primary-800: oklch(0.279 0.041 260.031);
+  --color-primary-900: oklch(0.208 0.042 265.755);
+  --color-primary-950: oklch(0.129 0.042 264.695);
+}
+
+@layer base {
+  body {
+    @apply relative max-lg:snap-start;
+    @apply text-gray-800 dark:text-neutral-100;
+    @apply bg-neutral-100 dark:bg-gray-800;
+  }
+
+  h1 {
+    @apply font-semibold tracking-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl;
+    @apply text-slate-700 dark:text-slate-300;
+  }
+}
+
+/*
+@utility min-h--screen-navbar {
+  min-height: calc(100vh-var(--navbar-height));
+}
+@utility max-h--screen-navbar {
+  max-height: calc(100vh-var(--navbar-height));
+}
+*/
+
+@utility title {
+  &::after {
+    @apply mt-4 block h-[5px] w-[25vw] sm:w-[20vw] lg:w-[15vw] 2xl:w-[10vw];
+    @apply bg-cyan-600 dark:bg-cyan-700;
+    @apply content-empty;
+  }
+}
+
+@utility placeholders {
+  @apply text-slate-600 dark:text-slate-400;
+}
+
+@layer utilities {
+  .snap-start,
+  .snap-center {
+    scroll-margin-top: var(--navbar-height);
+  }
+}
+
+:is(main, [role='main']) {
+  @apply mb-8 flex flex-col pt-(--navbar-height);
+  > header {
+    @apply mb-12 pt-8 sm:pt-12 md:mb-16 md:pt-16 xl:mb-20;
+  }
+}

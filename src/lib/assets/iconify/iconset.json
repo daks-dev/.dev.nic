@@ -1,0 +1,31 @@
+{
+  "ic": [
+    "outline-location-on",
+    "outline-settings",
+    "round-close",
+    "round-arrow-forward-ios",
+    "round-arrow-right",
+    "round-block",
+    "round-check",
+    "round-check-box",
+    "round-check-box-outline-blank",
+    "round-chevron-right",
+    "round-mail-outline",
+    "round-menu",
+    "round-minus",
+    "round-more-vert",
+    "round-phone-in-talk",
+    "round-plus",
+    "round-search",
+    "round-search-off",
+    "round-touch-app",
+    "round-unfold-less",
+    "round-unfold-more",
+    "round-zoom-out-map",
+    "twotone-dark-mode",
+    "twotone-light-mode"
+  ],
+  "svg-spinners": ["180-ring-with-bg", "8-dots-rotate", "clock"],
+  "mdi": ["cube", "cube-outline", "transfer-up"],
+  "wpf": ["search"]
+}
