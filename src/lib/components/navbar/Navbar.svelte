@@ -71,12 +71,13 @@
 
   <NavHamburger
     on:click={toggle}
-    class="ml-4" />
+    class="bp:hidden ml-4" />
 
   <!-- FIXME: -->
   <!-- classUl="border-none bg-inherit dark:bg-inherit" -->
   <NavUl
-    class="max-h-screen--navbar bp:block bp:w-auto w-full overflow-y-auto"
+    class="max-h--screen-navbar bp:block bp:w-auto overflow-y-auto"
+    divClass="w-full"
     ulClass="
       flex flex-col p-4 mt-4 bp:flex-row bp:space-x-8 rtl:space-x-reverse bp:mt-0 bp:text-sm bp:font-medium
       border-none bg-inherit dark:bg-inherit"

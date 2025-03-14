@@ -6,7 +6,8 @@ const config = {
   shortName: 'НИЦ СЭ',
   description: 'Независимая строительная экспертиза в Москве',
 
-  display: 'minimal-ui', // standalone
+  displayOverride: ['fullscreen', 'minimal-ui'],
+  display: 'standalone',
   backgroundColor: '#fafafa',
   themeColor: '#cbd5e1',
   tileColor: '#1e293b'

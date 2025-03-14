@@ -2,7 +2,17 @@ import { promises as fs } from 'node:fs';
 import { resolve } from 'node:path';
 
 import app from '$lib/configs/app';
-const { id, scope, name, shortName, description, display, backgroundColor, themeColor } = app;
+const {
+  id,
+  scope,
+  name,
+  shortName,
+  description,
+  displayOverride,
+  display,
+  backgroundColor,
+  themeColor
+} = app;
 
 const pkg = JSON.parse(await fs.readFile(resolve(process.cwd(), 'package.json'), 'utf8'));
 
@@ -45,6 +55,7 @@ const data = {
   id,
   start_url: pathname,
   scope,
+  display_override: displayOverride,
   display,
   background_color: backgroundColor,
   theme_color: themeColor
