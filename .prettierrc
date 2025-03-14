@@ -13,6 +13,7 @@
   "bracketSameLine": true,
   "vueIndentScriptAndStyle": false,
   "embeddedLanguageFormatting": "auto",
+  "tailwindStylesheet": "./src/app.css",
   "tailwindAttributes": [
     "class",
     "custom",
