@@ -31,7 +31,7 @@
             'leading-tight font-extrabold',
             'text-4xl sm:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl',
             'text-slate-800 dark:text-slate-200',
-            'text-accent dark:text-shadow'
+            'dark:text-shadow'
           )}
           style:--text-shadow-val="3px">
           <span class="block text-[125%]">АО&nbsp;НИЦ</span>
@@ -44,7 +44,7 @@
           один из лидеров на строительном рынке в области консалтинга, лабораторного сопровождения
           строительства, обследования зданий и сооружений
         </p>
-        <div class="xs:hidden flex justify-around">
+        <div class="flex justify-around xs:hidden">
           <Button
             href="tel://{telephone.replace(/[\s-()]/g, '')}"
             class="shadow-md shadow-slate-500/20"
@@ -66,8 +66,8 @@
         </div>
         <div
           class="
-            xs:flex hidden flex-col gap-y-2
-            text-slate-600 dark:text-slate-400">
+            hidden flex-col gap-y-2 text-slate-600
+            xs:flex dark:text-slate-400">
           <a
             class="
               text-3xl font-semibold transition duration-200
@@ -89,7 +89,7 @@
       </div>
       <div
         class="
-          placeholders hidden
+          hidden placeholders
           lg:col-span-5 lg:mt-0 lg:flex 2xl:col-span-4">
         <VideoPlaceholder
           class="h-auto w-full max-w-full"
@@ -98,7 +98,7 @@
     </div>
   </header>
 
-  <div class={twMerge('frame mb-8', 'readable', 'bp:text-lg/relaxed dark:text-slate-300')}>
+  <div class={twMerge('frame mb-16', 'readable', 'sm:text-justify')}>
     <p>
       АО <strong>Научно-исследовательский центр «Строительная экспертиза»</strong> - является одним из
       лидеров на строительном рынке России в области консалтинга, лабораторного сопровождения строительства,
@@ -141,9 +141,9 @@
       направления деятельности.
     </p>
 
-    <h4>
+    <h2>
       Наиболее известными среди реализованных нами объектов за последние несколько лет являются:
-    </h4>
+    </h2>
     <ul>
       <li>обследование комплекса жилых зданий на ул.Мосфильмовской в г.Москве;</li>
       <li>
@@ -164,7 +164,7 @@
       <li>выполнение строительного контроля при возведении памятника П.А. Столыпину.</li>
     </ul>
 
-    <h4>Основными направлениями деятельности компании являются:</h4>
+    <h2>Основными направлениями деятельности компании являются:</h2>
     <ul>
       <li>
         Контроль качества при возведении зданий и сооружений, в т.ч. высотных, большепролетный и
@@ -182,14 +182,14 @@
       <li>Судебная экспертиза.</li>
     </ul>
 
-    <p class="text-brand mt-8 text-sm">
+    <p class="mt-8 text-sm text-accent">
       <span class="text-xl font-bold">&#10004;</span> Любая информация, представленная на данном сайте,
       носит исключительно информационный характер и ни при каких условиях не является публичной офертой,
       определяемой положениями статьи 437 ГК РФ.
     </p>
   </div>
 
-  <div class="placeholders frame">
+  <div class="frame placeholders">
     <TestimonialPlaceholder />
   </div>
 </main>

@@ -1,10 +1,10 @@
-/* @import '@daks.dev/svelte.sdk/fonts/open-sans/variable'; */
-@import '@daks.dev/svelte.sdk/tailwind';
+@import '@daks.dev/svelte.sdk/fonts/open-sans/variable';
 
+@import '@daks.dev/svelte.sdk/tailwind';
 @source './';
 @source '../node_modules/flowbite-svelte/dist';
 
-@plugin 'flowbite/plugin';
+/* @plugin 'flowbite/plugin'; */
 
 @theme {
   /* --breakpoint-bp: 48rem; */
@@ -35,28 +35,35 @@
 }
 
 @layer base {
-  body {
+  :is(body) {
     @apply relative max-lg:snap-start;
-    @apply text-gray-700 dark:text-neutral-300;
+    @apply text-gray-900 dark:text-slate-300;
     @apply bg-neutral-100 dark:bg-gray-800;
   }
 
-  h1 {
-    @apply font-semibold tracking-tight;
-    @apply text-4xl md:text-5xl lg:text-6xl;
+  :is(h1) {
+    @apply font-semibold lg:tracking-wide 2xl:tracking-tight;
+    @apply text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl;
     @apply text-slate-700 dark:text-slate-300;
   }
-  h2 {
-    @apply tracking-wide;
-    @apply sm:text-3.5xl lg:text-4.5xl text-3xl md:text-4xl;
+  :is(h2) {
+    @apply lg:tracking-wide;
+    @apply text-2.5xl sm:text-3xl lg:text-3.5xl 2xl:text-4xl;
     @apply text-slate-700 dark:text-slate-500;
   }
-  h3 {
-    @apply sm:text-2.5xl md:text-3.5xl text-2xl lg:text-4xl;
-    @apply text-slate-800 dark:text-slate-400;
+  :is(h3) {
+    @apply text-2xl sm:text-2.5xl lg:text-3xl 2xl:text-3.5xl;
   }
-  h4 {
-    @apply text-1.5xl md:text-2.5xl xl:text-3.5xl sm:text-2xl lg:text-3xl;
+  :is(h4) {
+    @apply text-1.5xl sm:text-2xl lg:text-2.5xl 2xl:text-3xl;
+  }
+  :is(h5) {
+    @apply text-xl sm:text-1.5xl lg:text-2xl 2xl:text-2.5xl;
+  }
+  :is(h6) {
+    @apply text-lg sm:text-xl lg:text-1.5xl 2xl:text-2xl;
+  }
+  :is(h3, h4, h5, h6) {
     @apply text-slate-800 dark:text-slate-400;
   }
 }
@@ -81,8 +88,7 @@
 }
 
 @layer utilities {
-  .snap-start,
-  .snap-center {
+  :is(.snap-start, .snap-center) {
     scroll-margin-top: var(--navbar-height);
   }
 }
@@ -91,5 +97,13 @@
   @apply mb-8 flex flex-col pt-(--navbar-height);
   > header {
     @apply mb-12 pt-8 sm:pt-12 md:mb-16 md:pt-16 xl:mb-20;
+  }
+}
+
+:is(.readable) {
+  @apply dark:font-light;
+  :where(h2, h3, h4) {
+    @apply tracking-normal;
+    @apply text-xl sm:text-1.5xl lg:text-2xl 2xl:text-2.5xl;
   }
 }
