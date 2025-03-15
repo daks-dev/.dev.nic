@@ -76,8 +76,12 @@
 }
 
 @utility title {
+  small {
+    @apply mt-2 ml-1 block;
+    @apply text-lg tracking-normal sm:text-xl lg:text-1.5xl 2xl:text-2xl;
+  }
   &::after {
-    @apply mt-4 block h-[5px] w-[25vw] sm:w-[20vw] lg:w-[15vw] 2xl:w-[10vw];
+    @apply mt-4 ml-1 block h-[5px] w-[25vw] sm:w-[20vw] lg:w-[15vw] 2xl:w-[10vw];
     @apply bg-cyan-600 dark:bg-cyan-700;
     @apply content-empty;
   }

@@ -48,8 +48,8 @@
   let:hidden
   let:toggle
   class="
-    overflow-offset dark:bg-primary-700 fixed top-0 left-0 z-40
-    shadow-md"
+    overflow-offset fixed top-0 left-0 z-40 shadow-md
+    dark:bg-primary-700"
   navContainerClass="wrapper-2xl"
   fluid
   color="navbar">
@@ -67,16 +67,16 @@
     </span-->
   </NavBrand>
 
-  <DarkMode class="bp:order-last bp:ml-0 ml-auto cursor-pointer" />
+  <DarkMode class="ml-auto cursor-pointer bp:order-last bp:ml-0" />
 
   <NavHamburger
     on:click={toggle}
-    class="bp:hidden ml-4" />
+    class="ml-4 bp:hidden" />
 
   <!-- FIXME: -->
   <!-- classUl="border-none bg-inherit dark:bg-inherit" -->
   <NavUl
-    class="max-h--screen-navbar bp:block bp:w-auto overflow-y-auto"
+    class="max-h--screen-navbar overflow-y-auto bp:block bp:w-auto"
     divClass="w-full"
     ulClass="
       flex flex-col p-4 mt-4 bp:flex-row bp:space-x-8 rtl:space-x-reverse bp:mt-0 bp:text-sm bp:font-medium
@@ -98,9 +98,9 @@
         <NavLi
           on:click={close}
           class={classNames(
-            'page:text-cyan-700 page:disabled page:dark:text-gray-200',
+            'page:disabled page:text-cyan-700 page:dark:text-gray-200',
             'cursor-pointer select-none',
-            home && 'bp:block hidden'
+            home && 'hidden bp:block'
           )}
           href={link.href ?? undefined}
           target={link.target}

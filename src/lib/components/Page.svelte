@@ -21,7 +21,7 @@
     <h1 class="title">{name}</h1>
   </header>
 
-  <div class="placeholders frame">
+  <div class="frame placeholders">
     <div class="mb-12 grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
       <ImagePlaceholder />
       <TextPlaceholder />

@@ -30,7 +30,7 @@
 <main
   class="frame mb-0 grow"
   itemprop="mainContentOfPage">
-  <header class="frame sr-only">
+  <header class="sr-only frame">
     <h1 class="title">Регламент</h1>
   </header>
 
@@ -58,7 +58,7 @@
         'mx-auto self-center',
         'tracking-wide sm:text-base',
         'button rounded-xs border border-slate-500',
-        'oversee:bg-slate-500 bg-neutral-300 dark:bg-slate-700'
+        'bg-neutral-300 dark:bg-slate-700 oversee:bg-slate-500'
       )}
       href="/docs/regulation.pdf"
       target="_blank">

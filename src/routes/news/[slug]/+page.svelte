@@ -44,7 +44,7 @@
           alt="" />
       {/each}
     </div>
-    <div class="readable bp:text-lg/relaxed grow text-justify leading-relaxed">
+    <div class="readable grow text-justify leading-relaxed bp:text-lg/relaxed">
       <Component />
     </div>
   </div>

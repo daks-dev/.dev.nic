@@ -29,7 +29,7 @@
     <a
       rel="noreferrer nofollow"
       class="
-        transition-easy hover:drop-shadow-deep w-24 drop-shadow-md hover:scale-105
+        transition-easy w-24 drop-shadow-md hover:scale-105 hover:drop-shadow-deep
         sm:w-32"
       href="https://github.com/daks-dev/.dev.nic"
       target="_blank">

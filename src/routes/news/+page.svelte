@@ -23,11 +23,11 @@
     <h1 class="title">Новости</h1>
   </header>
 
-  <div class="frame xs:grid-cols-2 grid grid-cols-1 gap-8 md:grid-cols-3">
+  <div class="frame grid grid-cols-1 gap-8 xs:grid-cols-2 md:grid-cols-3">
     {#each items as { slug, title, description, images }}
       {#if slug}
         <a
-          class="group oversee:text-sky-500 relative place-self-center"
+          class="group relative place-self-center oversee:text-sky-500"
           href="/news/{slug}">
           <Sign
             class="top-10 left-2"
@@ -37,7 +37,7 @@
             custom={{
               image: [
                 'mb-2 aspect-video w-48 lg:w-auto',
-                'group-oversee:scale-105 rounded-md bg-neutral-500/10',
+                'rounded-md bg-neutral-500/10 group-oversee:scale-105',
                 'transition-transform duration-300'
               ]
             }}

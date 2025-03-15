@@ -82,9 +82,9 @@
           <img
             class="
             transition-easy
-            oversee:scale-105 oversee:drop-shadow-lg
             mx-3 rounded-md
-            drop-shadow-md transition-transform duration-300"
+            drop-shadow-md transition-transform
+            duration-300 oversee:scale-105 oversee:drop-shadow-lg"
             {...thumbnail}
             alt="" />
         </LightboxThumbnail>
@@ -101,12 +101,12 @@
 
   <div
     class="
-      frame xs:h-[35vmax] flex
-      h-[40vmax] grow sm:h-[30vmax] md:h-[25vmax] lg:h-auto">
+      frame flex h-[40vmax]
+      grow xs:h-[35vmax] sm:h-[30vmax] md:h-[25vmax] lg:h-auto">
     <YandexMap
       class={[
         'min-h-full w-full overflow-hidden',
-        'bg--waiting bg-25% sm:bg-20% md:bg-10% xl:bg-5% bg-gray-200 bg-center bg-no-repeat',
+        'bg-gray-200 bg--waiting bg-25% bg-center bg-no-repeat sm:bg-20% md:bg-10% xl:bg-5%',
         'border-4 border-slate-400'
       ]}
       data={dataset} />

@@ -100,8 +100,8 @@
       <slot>
         <ul
           class="
-            max-bp:ml-1 max-bp:border-l-2 bp:pb-2
-            bp:pt-1 border-dotted border-gray-700 dark:border-gray-500"
+            border-dotted border-gray-700 max-bp:ml-1
+            max-bp:border-l-2 bp:pt-1 bp:pb-2 dark:border-gray-500"
           aria-labelledby="dropdownLargeButton">
           {#each link.links as item}
             {@const href = `${link.href}${item.href}`}

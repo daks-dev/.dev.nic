@@ -1,10 +1,11 @@
 <script lang="ts">
-  import { afterNavigate } from '$app/navigation';
+  import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
   import { sineInOut } from 'svelte/easing';
+  import { afterNavigate } from '$app/navigation';
   import { Drawer, Sidebar, SidebarBrand, SidebarWrapper } from 'flowbite-svelte';
   import { Icon } from '@daks.dev/svelte.sdk';
-  import SidebarGroup from './SidebarGroup.svelte';
   import type { NavItem } from '@daks.dev/svelte.sdk';
+  import SidebarGroup from './SidebarGroup.svelte';
 
   export let header: Partial<NavItem>[] = [];
   export let activity: Partial<NavItem>[] = [];
@@ -34,11 +35,13 @@
 
 <button
   on:click={open}
-  class="
-    fixed top-1/2 z-20 h-[35vmin] -translate-y-1/2 rounded-r-lg bg-neutral-400/70 pr-6
-    transition duration-100
-    hover:bg-gray-400 hover:pr-8
-    dark:bg-gray-700/70 dark:hover:bg-gray-400/70"
+  class={twMerge(
+    'fixed top-1/2 z-20 h-[35vmin] -translate-y-1/2 rounded-r-lg bg-neutral-400/70 pr-6',
+    'transition duration-100',
+    'dark:bg-gray-700/70 dark:hover:bg-gray-400/70',
+    'hover:bg-gray-400 hover:pr-8',
+    'hover:cursor-pointer'
+  )}
   aria-label="drawer">
   <span
     class="
