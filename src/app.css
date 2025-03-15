@@ -92,6 +92,9 @@
 @utility placeholders {
   @apply text-slate-600 dark:text-slate-400;
 }
+@utility leader {
+  @apply text-slate-800 dark:text-slate-400;
+}
 
 @layer utilities {
   :is(.snap-start, .snap-center) {
@@ -111,5 +114,9 @@
   :where(h2, h3, h4) {
     @apply tracking-normal;
     @apply text-xl sm:text-1.5xl lg:text-2xl 2xl:text-2.5xl;
+  }
+  :where(.leader) {
+    @apply mt-6;
+    @apply text-base sm:text-lg lg:text-xl 2xl:text-1.5xl;
   }
 }

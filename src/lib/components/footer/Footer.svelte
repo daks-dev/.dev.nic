@@ -15,8 +15,7 @@
   <div class="wrapper-2xl mx-auto flex items-center max-sm:flex-col sm:justify-between">
     <FooterCopyright
       href="/"
-      by="НИЦ «Строительная экспертиза»&trade;"
-      year={2022} />
+      by="НИЦ «Строительная экспертиза»&trade;" />
     {#if links.length}
       <FooterLinkGroup
         class="mt-3 flex flex-wrap items-center text-sm text-gray-500 sm:mt-0 dark:text-gray-400">

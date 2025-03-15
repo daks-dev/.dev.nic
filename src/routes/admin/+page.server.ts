@@ -1,3 +1,4 @@
+import { read } from '$app/server';
 import { promises as fs } from 'node:fs';
 import { resolve } from 'node:path';
 import type { PageServerLoad } from './$types';

@@ -1,18 +1,43 @@
 <script lang="ts">
+  import { BROWSER } from 'esm-env';
   import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
+  import { onMount } from 'svelte';
   import { Button } from 'flowbite-svelte';
-  import {
-    YandexMetrikaHit,
-    TestimonialPlaceholder,
-    VideoPlaceholder,
-    Icon
-  } from '@daks.dev/svelte.sdk';
+  import { YandexMetrikaHit, TestimonialPlaceholder, Icon } from '@daks.dev/svelte.sdk';
+  import Video from '$lib/components/video';
 
   import microdata from '$lib/configs/microdata';
+  import { load } from 'js-yaml';
   const { email, telephone, address } = microdata.organization;
 
   const title = 'НИЦ СЭ • Строительная экспертиза';
   const description = 'АО НИЦ «Строительная экспертиза», Москва';
+
+  let render = $state(false);
+  let opacity = $state(0);
+
+  const player = {
+    src: '/assets/videos/00.720p.4^3.mp4',
+    // width: 480,
+    // height: 360,
+    controls: true,
+    controlsList: 'nofullscreen nodownload',
+    muted: true,
+    autoplay: true,
+    loop: true,
+    loaded: () => (opacity = 1)
+  };
+
+  if (BROWSER)
+    onMount(() => {
+      render = true;
+      /*
+      const interval = setInterval(() => {
+        opacity = 1;
+      }, 500);
+      return () => clearInterval(interval);
+      */
+    });
 </script>
 
 <YandexMetrikaHit
@@ -32,7 +57,7 @@
             'dark:text-shadow'
           )}
           style:--text-shadow-val="3px">
-          <span class="block text-[125%]">АО&nbsp;НИЦ</span>
+          <span class="block text-[125%]">АО НИЦ</span>
           Строительная экспертиза
         </h1>
         <p
@@ -87,18 +112,25 @@
       </div>
       <div
         class="
-          hidden placeholders
-          lg:col-span-5 lg:mt-0 lg:flex 2xl:col-span-4">
-        <VideoPlaceholder
-          class="h-auto w-full max-w-full"
-          size="48" />
+          hidden
+          lg:col-span-5 lg:mt-0 lg:block 2xl:col-span-4">
+        {#if render}
+          <Video
+            class={twMerge(
+              'h-auto w-full max-w-full',
+              'rounded-lg border border-gray-200 dark:border-gray-700',
+              'transition-opacity duration-3000 ease-in'
+            )}
+            style="opacity:{opacity}"
+            {...player} />
+        {/if}
       </div>
     </div>
   </header>
 
   <div class={twMerge('frame mb-16', 'readable', 'sm:text-justify')}>
     <p>
-      АО <strong>Научно-исследовательский центр «Строительная экспертиза»</strong> - является одним из
+      АО <strong>Научно-исследовательский центр «Строительная экспертиза»</strong> является одним из
       лидеров на строительном рынке России в области консалтинга, лабораторного сопровождения строительства,
       а также обследования зданий и сооружений промышленного и гражданского назначения.
     </p>
@@ -123,8 +155,8 @@
       Принцип нашей компании — стремление достичь новых уровней технического и делового развития.
       Мобильность и маневренность человеческих и технологических ресурсов, а также гибкая финансовая
       система позволяет выполнять работы высокой сложности, оперативно решать возникающие
-      производственные вопросы, выполняя работы высокого качества в установленный срок, но <strong
-        >стоимость строительной экспертизы</strong> при этом остаётся адекватной.
+      производственные вопросы, выполняя работы высокого качества в установленный срок, но стоимость
+      строительной экспертизы при этом остаётся адекватной.
     </p>
     <p>
       Возможность привлечения профессионалов высочайшего уровня из сотрудников МГСУ, ЦНИИОМТП,
@@ -133,9 +165,9 @@
       Строительного Университета, дает нам возможность постоянно развиваться и открывать новые
       направления деятельности.
     </p>
-    <h2>
+    <p class="leader">
       Наиболее известными среди реализованных нами объектов за последние несколько лет являются:
-    </h2>
+    </p>
     <ul>
       <li>обследование комплекса жилых зданий на ул.Мосфильмовской в г.Москве;</li>
       <li>
@@ -155,7 +187,7 @@
       </li>
       <li>выполнение строительного контроля при возведении памятника П.А. Столыпину.</li>
     </ul>
-    <h2>Основными направлениями деятельности компании являются:</h2>
+    <p class="leader">Основными направлениями деятельности компании являются:</p>
     <ul>
       <li>
         Контроль качества при возведении зданий и сооружений, в т.ч. высотных, большепролетный и
