@@ -5,9 +5,9 @@ until [ $ac = "-" ]; do
     echo -e "";
     echo -e "+ : git:pull";
     echo -e "";
-    echo -e "1 : pnpm:install";
+    echo -e "1 : npm:install";
     echo -e "2 : # pnpm:update";
-    echo -e "3 : pnpm:outdated";
+    echo -e "3 : # pnpm:outdated";
     echo -e "";
     echo -e "4 : svelte:check";
     echo -e "5 : vite:build";

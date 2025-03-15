@@ -4,6 +4,8 @@
 @source './';
 @source '../node_modules/flowbite-svelte/dist';
 
+@import '@daks.dev/svelte.sdk/tailwind/css/readable';
+
 /* @plugin 'flowbite/plugin'; */
 
 @theme {

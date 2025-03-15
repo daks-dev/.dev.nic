@@ -2,8 +2,6 @@
   import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
   import { CarouselKit, GalleryKit, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
-  import '@daks.dev/svelte.sdk/styles/readable.css';
-
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
   const { images } = data;
@@ -22,14 +20,15 @@
   </header>
 
   <div class="frame">
-    <div class="readable">
+    <div class={twMerge('readable', 'sm:text-justify')}>
       <CarouselKit
+        dataset={images[0]}
         class={twMerge(
           'hidden md:block',
           'float-left my-2 mr-8 w-48 overflow-hidden 2xl:w-56',
           'rounded-sm drop-shadow-lg lg:rounded-lg'
         )}
-        dataset={images[0]}
+        alt="обследование зданий и сооружений 0"
         show={1}
         duration={20000}
         controls="play"
@@ -67,11 +66,12 @@
   </div>
 
   <GalleryKit
+    dataset={images[1]}
     class="frame mt-16 gap-4 lg:gap-8"
     custom={{
       caption: 'text-lg text-slate-700 dark:text-slate-400'
     }}
-    dataset={images[1]}
+    alt="обследование зданий и сооружений 1"
     centered
     rounded
     scale

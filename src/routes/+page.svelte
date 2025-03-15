@@ -8,8 +8,6 @@
     Icon
   } from '@daks.dev/svelte.sdk';
 
-  import '@daks.dev/svelte.sdk/styles/readable.css';
-
   import microdata from '$lib/configs/microdata';
   const { email, telephone, address } = microdata.organization;
 

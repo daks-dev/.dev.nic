@@ -2,8 +2,6 @@
   import { onMount } from 'svelte';
   import { FormattedDate, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
-  import '@daks.dev/svelte.sdk/styles/readable.css';
-
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
   const { slug, title, description, content: Component, images } = data;
@@ -45,7 +43,9 @@
       {/each}
     </div>
     <div class="readable grow text-justify leading-relaxed bp:text-lg/relaxed">
-      <Component />
+      {#if Component}
+        <Component />
+      {/if}
     </div>
   </div>
 </main>
