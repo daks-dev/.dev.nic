@@ -22,7 +22,7 @@ const promises = {
 const filter = (obj: Record<string, unknown>, dir: string | undefined) =>
   Object.keys(obj).filter((x) => x.split('/').at(-2) === dir);
 
-export const load = (async ({ params }) => {
+export const load: PageLoad = async ({ params }) => {
   if (/^\d{2}-\d{2}-\d{2}$/.test(params.slug)) {
     const { slug } = params;
     const md = filter(promises.mds, slug)[0];
@@ -48,4 +48,4 @@ export const load = (async ({ params }) => {
     throw error(404, 'Not found [data]');
   }
   throw error(404, 'Not found');
-}) satisfies PageLoad;
+};

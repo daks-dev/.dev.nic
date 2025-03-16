@@ -48,17 +48,17 @@ push(maskable, 'maskable');
 push(monochrome, 'monochrome');
 
 const data = {
-  name,
-  short_name: shortName,
-  description,
-  icons,
   id,
   start_url: pathname,
   scope,
   display_override: displayOverride,
   display,
   background_color: backgroundColor,
-  theme_color: themeColor
+  theme_color: themeColor,
+  name,
+  short_name: shortName,
+  description,
+  icons
 };
 
 export const prerender = true;

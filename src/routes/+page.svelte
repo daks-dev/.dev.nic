@@ -3,8 +3,7 @@
   import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
   import { onMount } from 'svelte';
   import { Button } from 'flowbite-svelte';
-  import { YandexMetrikaHit, TestimonialPlaceholder, Icon } from '@daks.dev/svelte.sdk';
-  import Video from '$lib/components/video';
+  import { Icon, TestimonialPlaceholder, Video, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
   import microdata from '$lib/configs/microdata';
   const { email, telephone, address } = microdata.organization;
@@ -123,7 +122,7 @@
     </div>
   </header>
 
-  <div class={twMerge('frame mb-16', 'readable', 'sm:text-justify')}>
+  <div class={['readable', 'frame mb-16']}>
     <p>
       АО <strong>Научно-исследовательский центр «Строительная экспертиза»</strong> является одним из
       лидеров на строительном рынке России в области консалтинга, лабораторного сопровождения строительства,

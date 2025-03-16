@@ -98,7 +98,10 @@
 
 @layer utilities {
   :is(.readable) {
-    @apply text-sm sm:text-base bp:text-lg;
+    @apply text-sm/relaxed sm:text-base/relaxed bp:text-lg/relaxed;
+    :where(p) {
+      @apply xs:text-justify;
+    }
     :where(table, th, td) {
       @apply border-slate-500 dark:border-slate-400;
       @apply cursor-default;

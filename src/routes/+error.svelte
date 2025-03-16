@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
 
   const online = typeof navigator !== 'undefined' ? navigator.onLine : true;
 </script>
 
 <svelte:head>
-  <title>НИЦ СЭ • {$page.status}</title>
+  <title>НИЦ СЭ • {page.status}</title>
   <meta
     name="description"
     content="Ошибка в работе приложения" />
@@ -16,15 +16,15 @@
     <h1
       class="w-full
              font-mono text-[35vh] font-bold text-slate-500 dark:text-slate-500">
-      {$page.status}
+      {page.status}
     </h1>
     <p
       class="w-full rounded-sm bg-rose-600
               px-12 py-8 text-xl text-gray-200">
-      {#if $page.error?.message}
-        {$page.error.message}
+      {#if page.error?.message}
+        {page.error.message}
       {:else}
-        Обнаружена ошибка {$page.status}
+        Обнаружена ошибка {page.status}
       {/if}
     </p>
     <!--{#if $page.status >= 500}
