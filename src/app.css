@@ -97,6 +97,28 @@
 @import '@daks.dev/svelte.sdk/tailwind/css/readable';
 
 @layer utilities {
+  :is(.readable) {
+    @apply text-sm sm:text-base bp:text-lg;
+    :where(table, th, td) {
+      @apply border-slate-500 dark:border-slate-400;
+      @apply cursor-default;
+    }
+    :where(th, td) {
+      @apply sm:px-2.5 sm:py-2;
+    }
+    :where(th) {
+      @apply font-medium;
+      @apply text-slate-500 dark:text-slate-400;
+    }
+    :where(tr) {
+      @apply hover:bg-neutral-200 dark:hover:bg-gray-700;
+    }
+    :where(blockquote) {
+      @apply border-slate-500 dark:border-slate-400;
+      @apply text-gray-500 dark:text-gray-400;
+    }
+  }
+
   :is(.snap-start, .snap-center) {
     scroll-margin-top: var(--navbar-height);
   }

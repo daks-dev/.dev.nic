@@ -103,7 +103,7 @@
       <li>Подбор составов бетонов с заданными свойствами.</li>
     </ul>
 
-    <table class="mb-8 block">
+    <table class="mb-8 text-xs xs:text-sm">
       <tbody>
         <tr>
           <th>№ п/п</th><th>Наименование испытываемой продукции</th><th
