@@ -4,8 +4,6 @@
 @source './';
 @source '../node_modules/flowbite-svelte/dist';
 
-@import '@daks.dev/svelte.sdk/tailwind/css/readable';
-
 /* @plugin 'flowbite/plugin'; */
 
 @theme {
@@ -95,6 +93,8 @@
 @utility leader {
   @apply text-slate-800 dark:text-slate-400;
 }
+
+@import '@daks.dev/svelte.sdk/tailwind/css/readable';
 
 @layer utilities {
   :is(.snap-start, .snap-center) {

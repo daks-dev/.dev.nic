@@ -1,10 +1,10 @@
 <script lang="ts">
   import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
-  import { CarouselKit, GalleryKit, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
+  import { CarouselKit, LightboxKit, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
-  const { images } = data;
+  const { dataset, sources, thumbnails } = data;
 
   const title = 'НИЦ СЭ • Обследование зданий и сооружений';
   const description = 'Обследование зданий и сооружений АО НИЦ «Строительная экспертиза»';
@@ -22,7 +22,7 @@
   <div class="frame">
     <div class={twMerge('readable', 'sm:text-justify')}>
       <CarouselKit
-        dataset={images[0]}
+        {dataset}
         class={twMerge(
           'hidden md:block',
           'float-right my-1 ml-8 w-48 overflow-hidden 2xl:w-56',
@@ -68,15 +68,19 @@
     </div>
   </div>
 
-  <GalleryKit
-    dataset={images[1]}
+  <LightboxKit
+    {sources}
+    {thumbnails}
     class="frame mt-16 gap-4 lg:gap-8"
     custom={{
-      caption: 'text-lg text-slate-700 dark:text-slate-400'
+      overlay: 'overflow-offset'
+    }}
+    options={{
+      behaviour: 'loop'
     }}
     alt="обследование зданий и сооружений 1"
+    sign
     centered
-    rounded
-    scale
-    shadow />
+    shadow
+    scale />
 </main>

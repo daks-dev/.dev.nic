@@ -1,18 +1,22 @@
 <script lang="ts">
   import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
 
-  import type { HTMLVideoAttributes } from 'svelte/elements';
+  import type {
+    HTMLVideoAttributes,
+    HTMLSourceAttributes,
+    HTMLTrackAttributes
+  } from 'svelte/elements';
   type Props = Omit<HTMLVideoAttributes, 'class'> & {
-    src: string;
     class?: ClassName;
-    type?: string;
+    sources?: HTMLSourceAttributes[];
+    traks?: HTMLTrackAttributes[];
     loaded?: (x?: Event) => void;
   };
   const {
     children,
-    src,
     class: className,
-    type = 'video/mp4',
+    sources = [],
+    traks = [],
     loaded = () => {},
     ...rest
   }: Props = $props();
@@ -22,9 +26,12 @@
   onloadeddata={loaded}
   class={twMerge(className)}
   {...rest}>
-  <source
-    {src}
-    {type} />
+  {#each sources as attrs}
+    <source {...attrs} />
+  {/each}
+  {#each traks as attrs}
+    <trak {...attrs}></trak>
+  {/each}
   {#if children}
     {@render children()}
   {:else}

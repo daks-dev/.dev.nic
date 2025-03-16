@@ -42,7 +42,7 @@
           alt="" />
       {/each}
     </div>
-    <div class="readable grow text-justify leading-relaxed bp:text-lg/relaxed">
+    <div class="grow text-justify readable leading-relaxed bp:text-lg/relaxed">
       {#if Component}
         <Component />
       {/if}

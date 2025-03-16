@@ -7,19 +7,16 @@
   import Video from '$lib/components/video';
 
   import microdata from '$lib/configs/microdata';
-  import { load } from 'js-yaml';
   const { email, telephone, address } = microdata.organization;
 
   const title = 'НИЦ СЭ • Строительная экспертиза';
   const description = 'АО НИЦ «Строительная экспертиза», Москва';
 
-  let render = $state(false);
   let opacity = $state(0);
-
   const player = {
-    src: '/assets/videos/00.720p.4^3.mp4',
-    // width: 480,
-    // height: 360,
+    src: '/assets/videos/00.720p.4^3.slow.mp4',
+    width: 480,
+    height: 360,
     controls: true,
     controlsList: 'nofullscreen nodownload',
     muted: true,
@@ -28,15 +25,13 @@
     loaded: () => (opacity = 1)
   };
 
+  let mounted = $state(false);
   if (BROWSER)
     onMount(() => {
-      render = true;
-      /*
       const interval = setInterval(() => {
-        opacity = 1;
-      }, 500);
+        mounted = true;
+      }, 300);
       return () => clearInterval(interval);
-      */
     });
 </script>
 
@@ -114,7 +109,7 @@
         class="
           hidden
           lg:col-span-5 lg:mt-0 lg:block 2xl:col-span-4">
-        {#if render}
+        {#if mounted}
           <Video
             class={twMerge(
               'h-auto w-full max-w-full',

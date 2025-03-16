@@ -1,7 +1,7 @@
 <script lang="ts">
   import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
   import { onMount } from 'svelte';
-  import { Lightbox, Sign, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
+  import { Lightbox, Sign, Figure, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
@@ -24,32 +24,43 @@
 
   <div class={twMerge('readable', 'frame flex flex-col md:block', 'sm:text-justify')}>
     <Lightbox
-      class={twMerge('order-2 mx-auto', 'md:order-none md:float-right md:my-1 md:mr-auto md:ml-8')}
+      class={['order-2 mx-auto', 'md:order-none md:float-right md:my-1 md:mr-auto md:ml-8']}
       custom={{ overlay: 'overflow-offset' }}
-      title="Масштаб &trade;"
-      description="Строительная компания">
-      <svelte:fragment slot="thumbnail">
-        <img
-          class=""
-          src={thumbnail.src}
-          width={thumbnail.width}
-          height={thumbnail.height}
-          alt="skm: logotype thumbnail"
-          loading="lazy"
-          itemprop="thumbnailUrl" />
+      title="НИЦ «Строительная экспертиза»"
+      description="свидетельство Палаты судебных экспертов НП «СУДЭКС»">
+      <div
+        slot="thumbnail"
+        class="group relative">
+        <Sign
+          icon="ic:round-zoom-out-map"
+          class="right-0 m-2"
+          dark />
+        <Figure
+          data={thumbnail}
+          class={['relative', 'flex flex-col', 'items-center']}
+          custom={{
+            image: [
+              'h-auto w-full max-w-full object-contain',
+              'shadow-md hover:shadow-lg',
+              'hover:scale-105',
+              'transition duration-300 ease-in-out'
+            ]
+          }}
+          alt="свидетельство палаты судебных экспертов" />
         <link
-          href={source.src}
           rel="image"
-          itemprop="primaryImageOfPage" />
-      </svelte:fragment>
+          href={source.src} />
+        <link
+          rel="thumbnailUrl"
+          href={thumbnail.src} />
+      </div>
       <img
-        class="
-        bg--loading bg-10% bg-center bg-no-repeat
-        hover:sepia"
+        class="bg--loading bg-10% bg-center bg-no-repeat"
         src={source.src}
         width={source.width}
         height={source.height}
-        alt="skm: logotype"
+        alt=""
+        decoding="async"
         loading="lazy" />
     </Lightbox>
 
