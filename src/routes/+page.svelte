@@ -12,8 +12,8 @@
   const description = 'АО НИЦ «Строительная экспертиза», Москва';
 
   let opacity = $state(0);
-  const player = {
-    src: '/assets/videos/00.720p.4^3.slow.mp4',
+  const video = {
+    'data-src': '/assets/videos/00.720p.4^3.slow.mp4',
     width: 480,
     height: 360,
     controls: true,
@@ -24,14 +24,7 @@
     loaded: () => (opacity = 1)
   };
 
-  let mounted = $state(false);
-  if (BROWSER)
-    onMount(() => {
-      const interval = setInterval(() => {
-        mounted = true;
-      }, 300);
-      return () => clearInterval(interval);
-    });
+  onMount(() => document?.lazyload.update());
 </script>
 
 <YandexMetrikaHit
@@ -108,16 +101,15 @@
         class="
           hidden
           lg:col-span-5 lg:mt-0 lg:block 2xl:col-span-4">
-        {#if mounted}
-          <Video
-            class={twMerge(
-              'h-auto w-full max-w-full',
-              'rounded-lg border border-gray-200 dark:border-gray-700',
-              'transition-opacity duration-3000 ease-in'
-            )}
-            style="opacity:{opacity}"
-            {...player} />
-        {/if}
+        <Video
+          class={[
+            'lazy',
+            'h-auto w-full max-w-full',
+            'rounded-lg border border-gray-200 dark:border-gray-700',
+            'transition-opacity duration-3000 ease-in'
+          ]}
+          style="opacity:{opacity}"
+          {...video} />
       </div>
     </div>
   </header>

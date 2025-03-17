@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import {
     Contacts,
     LightboxList,
@@ -46,8 +45,6 @@
 
   const title = 'НИЦ СЭ • Контакты ';
   const description = 'Контакты АО НИЦ «Строительная экспертиза»';
-
-  onMount(() => document?.lazyload.update());
 </script>
 
 <YandexMetrikaHit
@@ -61,9 +58,9 @@
     <h1 class="title">Контакты</h1>
   </header>
 
-  <div class="frame flex items-center justify-around gap-8">
+  <div class="frame flex items-center justify-between gap-8">
     <Contacts
-      class="frame"
+      class="h-fit py-4"
       {microdata} />
 
     <LightboxList
@@ -80,11 +77,11 @@
             icon="ic:round-zoom-out-map"
             dark />
           <img
-            class="
-            transition-easy
-            mx-3 rounded-md
-            drop-shadow-md transition-transform
-            duration-300 oversee:scale-105 oversee:drop-shadow-lg"
+            class={[
+              'rounded-md drop-shadow-md',
+              'oversee:scale-105 oversee:drop-shadow-lg',
+              'transition-easy transition-transform duration-300'
+            ]}
             {...thumbnail}
             alt="" />
         </LightboxThumbnail>

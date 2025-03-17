@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
   import { CarouselKit, LightboxKit, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
   import type { PageProps } from './$types';
@@ -20,14 +19,14 @@
   </header>
 
   <div class="frame">
-    <div class={twMerge('readable', 'sm:text-justify')}>
+    <div class={['readable', 'sm:text-justify']}>
       <CarouselKit
         {dataset}
-        class={twMerge(
+        class={[
           'hidden md:block',
           'float-right my-1 ml-8 w-48 overflow-hidden 2xl:w-56',
           'rounded-sm drop-shadow-lg lg:rounded-lg'
-        )}
+        ]}
         alt="обследование зданий и сооружений 0"
         show={1}
         duration={20000}
@@ -81,6 +80,7 @@
     alt="обследование зданий и сооружений 1"
     sign
     centered
+    rounded
     shadow
     scale />
 </main>

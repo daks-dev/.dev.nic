@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
   import { onMount } from 'svelte';
   import { Lightbox, Sign, Figure, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
@@ -22,7 +21,7 @@
     <h1 class="title">Судебная экспертиза</h1>
   </header>
 
-  <div class={twMerge('readable', 'frame flex flex-col md:block', 'sm:text-justify')}>
+  <div class={['readable', 'frame flex flex-col md:block', 'sm:text-justify']}>
     <Lightbox
       class={['order-2 mx-auto', 'md:order-none md:float-right md:my-1 md:mr-auto md:ml-8']}
       custom={{ overlay: 'overflow-offset' }}

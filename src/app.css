@@ -97,8 +97,20 @@
 @import '@daks.dev/svelte.sdk/tailwind/css/readable';
 
 @layer utilities {
-  :is(.readable) {
-    @apply text-sm/relaxed sm:text-base/relaxed bp:text-lg/relaxed;
+  :where(main, [role='main']) {
+    @apply mb-8 flex flex-col pt-(--navbar-height);
+    > header {
+      @apply mb-12 pt-8 sm:pt-12 md:mb-16 md:pt-16 xl:mb-20;
+    }
+  }
+
+  :where(.readable) {
+    @apply text-sm/relaxed bp:text-lg/relaxed sm:text-base/relaxed;
+    @apply dark:font-light;
+    :where(h2, h3, h4) {
+      @apply tracking-normal;
+      @apply text-xl sm:text-1.5xl lg:text-2xl 2xl:text-2.5xl;
+    }
     :where(p) {
       @apply xs:text-justify;
     }
@@ -117,31 +129,16 @@
       @apply hover:bg-neutral-200 dark:hover:bg-gray-700;
     }
     :where(blockquote) {
-      @apply border-slate-500 dark:border-slate-400;
       @apply text-gray-500 dark:text-gray-400;
+      @apply border-slate-500 dark:border-slate-400;
+    }
+    :where(.leader) {
+      @apply mt-6;
+      @apply text-base/relaxed bp:text-xl/relaxed sm:text-lg/relaxed;
     }
   }
 
-  :is(.snap-start, .snap-center) {
+  :where(.snap-start, .snap-center) {
     scroll-margin-top: var(--navbar-height);
-  }
-}
-
-:is(main, [role='main']) {
-  @apply mb-8 flex flex-col pt-(--navbar-height);
-  > header {
-    @apply mb-12 pt-8 sm:pt-12 md:mb-16 md:pt-16 xl:mb-20;
-  }
-}
-
-:is(.readable) {
-  @apply dark:font-light;
-  :where(h2, h3, h4) {
-    @apply tracking-normal;
-    @apply text-xl sm:text-1.5xl lg:text-2xl 2xl:text-2.5xl;
-  }
-  :where(.leader) {
-    @apply mt-6;
-    @apply text-base sm:text-lg lg:text-xl 2xl:text-1.5xl;
   }
 }
