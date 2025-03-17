@@ -98,7 +98,8 @@
         <NavLi
           on:click={close}
           class={classNames(
-            'page:disabled page:text-cyan-700 page:dark:text-gray-200',
+            'page:disabled page:text-gray-400 dark:page:text-gray-300',
+            'step:text-cyan-700 dark:step:text-cyan-600',
             'cursor-pointer select-none',
             home && 'hidden bp:block'
           )}

@@ -64,7 +64,7 @@
     text-gray-700 dark:text-gray-400 bp:dark:hover:text-white dark:hover:text-white
     border-b border-gray-100 bp:border-0 dark:border-gray-700
     bp:hover:text-blue-700 select-none`;
-  const activeClass = 'text-cyan-700 dark:text-gray-200';
+  const activeClass = 'text-gray-400 dark:text-gray-300';
 
   $: activeUrl = $page.url.pathname;
 </script>
