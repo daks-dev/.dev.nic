@@ -13,7 +13,7 @@
 
   let opacity = $state(0);
   const video = {
-    'data-src': '/assets/videos/00.720p.4^3.slow.mp4',
+    'data-src': '/assets/videos/00.720p.4^3.mp4',
     width: 480,
     height: 360,
     controls: true,

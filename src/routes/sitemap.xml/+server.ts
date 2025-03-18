@@ -1,7 +1,7 @@
 import { map } from '$lib/configs/nav';
 map.includes('/') || map.unshift('/');
 
-const PRIORITY = 0.7;
+const PRIORITY = [0.7, 0.5, 0.3];
 const CHANGEFREG = 'weekly'; // daily weekly monthly
 const TIMESTAMP = new Date().toISOString();
 
@@ -9,18 +9,23 @@ const canonical = process.env.PUBLIC_APP_CANONICAL
   ? new URL(process.env.PUBLIC_APP_CANONICAL).origin
   : '';
 
+const news = Object.keys(import.meta.glob('$lib/content/news/**/index.md')).map(
+  (x) => `/news/${x.split('/').at(-2)}`
+);
+
 const urlset =
   canonical &&
   map
+    .concat(news)
     .sort()
     .map(
-      (el) =>
+      (x) =>
         `
   <url>
-    <loc>${canonical}${el === '/' ? '' : el}</loc>
+    <loc>${canonical}${x === '/' ? '' : x}</loc>
     <lastmod>${`${TIMESTAMP}`}</lastmod>
     <changefreq>${CHANGEFREG}</changefreq>
-    <priority>${el === '/' ? '1.0' : PRIORITY}</priority>
+    <priority>${x === '/' ? '1.0' : PRIORITY[x.split('/').length - 2]}</priority>
   </url>`
     )
     .join('');

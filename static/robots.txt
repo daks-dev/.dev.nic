@@ -6,10 +6,10 @@ Disallow: /search
 Disallow: /article$
 Disallow: /article/
 Disallow: /contact$
-Disallow: /docs/
-Disallow: /services/
-Disallow: /tolerances/
-Disallow: /work/
+Disallow: /docs
+Disallow: /services
+Disallow: /tolerances
+Disallow: /work
 #
 Sitemap: https://dev.stroyexp.info/sitemap.xml
 #
