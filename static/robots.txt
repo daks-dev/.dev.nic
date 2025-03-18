@@ -2,5 +2,14 @@
 User-agent: *
 Disallow: /admin
 Disallow: /search
-#Sitemap: https://dev.stroyexp.info/sitemap.xml
+#
+Disallow: /article$
+Disallow: /article/
+Disallow: /contact$
+Disallow: /docs/
+Disallow: /services/
+Disallow: /tolerances/
+Disallow: /work/
+#
+Sitemap: https://dev.stroyexp.info/sitemap.xml
 #

@@ -36,21 +36,23 @@
     <div class="grid w-full gap-8 pt-8 lg:grid-cols-12">
       <div class="mr-auto place-self-center lg:col-span-7 2xl:col-span-8">
         <h1
-          class={twMerge(
+          class={[
             'mb-8',
             'leading-tight font-extrabold',
             'text-4xl sm:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl',
             'text-slate-800 dark:text-slate-200',
-            'dark:text-shadow'
-          )}
-          style:--text-shadow-val="3px">
+            'shadow-gray-400 text-shadow-3 dark:shadow-gray-600'
+          ]}>
           <span class="block text-[125%]">АО НИЦ</span>
           Строительная экспертиза
         </h1>
         <p
-          class="
-            xs:text-md mb-4
-            text-sm font-light text-gray-500 uppercase lg:text-lg dark:text-gray-400">
+          class={[
+            'mb-4',
+            'font-light uppercase',
+            'xs:text-md text-sm lg:text-lg',
+            'text-gray-500 dark:text-gray-400'
+          ]}>
           один из лидеров на строительном рынке в области консалтинга, лабораторного сопровождения
           строительства, обследования зданий и сооружений
         </p>
