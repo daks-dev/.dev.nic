@@ -6,8 +6,8 @@
   let { data }: PageProps = $props();
   const { items } = data;
 
-  const title = 'НИЦ СЭ • Новости';
-  const description = 'Новости АО НИЦ «Строительная экспертиза»';
+  const title = 'НИЦ СЭ • Статьи';
+  const description = 'Статьи АО НИЦ «Строительная экспертиза»';
 
   // const random = (x?: unknown[]): number => (x?.length ? Math.floor(Math.random() * x.length) : -1);
 
@@ -20,15 +20,15 @@
 
 <main itemprop="mainContentOfPage snap-start">
   <header class="frame">
-    <h1 class="title">Новости</h1>
+    <h1 class="title">Статьи</h1>
   </header>
 
   <div class="frame grid grid-cols-1 gap-8 xs:grid-cols-2 md:grid-cols-3">
-    {#each items as { slug, title, description, images }}
+    {#each items as { slug, title, description, published, images }}
       {#if slug}
         <a
           class="group relative place-self-center oversee:text-sky-500"
-          href="/news/{slug}">
+          href="/articles/{slug}">
           <Sign
             class="top-10 left-2"
             link
@@ -49,7 +49,7 @@
             {#snippet before()}
               <FormattedDate
                 class="mb-2 block tracking-wide text-slate-600 dark:text-slate-400"
-                date={slug}
+                date={published}
                 parse="YY-MM-DD" />
             {/snippet}
           </Figure>

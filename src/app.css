@@ -92,6 +92,7 @@
 }
 @utility leader {
   @apply text-slate-800 dark:text-slate-400;
+  @apply text-base sm:text-lg bp:text-xl 2xl:text-1.5xl;
 }
 
 @import '@daks.dev/svelte.sdk/tailwind/css/readable';
@@ -105,7 +106,7 @@
   }
 
   :where(.readable) {
-    @apply text-sm/relaxed bp:text-lg/relaxed sm:text-base/relaxed;
+    @apply text-sm/relaxed sm:text-base/relaxed bp:text-lg/relaxed;
     @apply dark:font-light;
     :where(h2, h3, h4) {
       @apply tracking-normal;
@@ -134,7 +135,7 @@
     }
     :where(.leader) {
       @apply mt-6;
-      @apply text-base/relaxed bp:text-xl/relaxed sm:text-lg/relaxed;
+      @apply leading-relaxed;
     }
   }
 

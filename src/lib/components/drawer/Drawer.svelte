@@ -36,18 +36,21 @@
 <button
   on:click={open}
   class={twMerge(
-    'fixed top-1/2 z-20 h-[35vmin] -translate-y-1/2 rounded-r-lg bg-neutral-400/70 pr-6',
-    'transition duration-100',
-    'dark:bg-gray-700/70 dark:hover:bg-gray-400/70',
-    'hover:bg-gray-400 hover:pr-8',
-    'hover:cursor-pointer'
+    'group',
+    'fixed top-1/2 z-20 h-[35vmin] -translate-y-1/2 pr-6',
+    'rounded-r-lg',
+    'bg-neutral-400/70 dark:bg-gray-700/50 dark:hover:bg-gray-400/50',
+    'hover:cursor-pointer hover:bg-gray-400 hover:pr-8',
+    'transition-colors duration-100'
   )}
   aria-label="drawer">
   <span
-    class="
-      lg:1/4 absolute top-1/2 right-2.5 h-1/2 w-1 -translate-y-1/2 animate-pulse
-      rounded-lg bg-gray-100 sm:h-1/3
-      dark:bg-gray-800"></span>
+    class={[
+      'absolute top-1/2 right-2.5 h-1/2 w-1 -translate-y-1/2 sm:h-1/3 lg:h-1/4',
+      'bg-gray-100 dark:bg-gray-800',
+      'rounded-lg',
+      'animate-pulse group-oversee:animation-paused'
+    ]}></span>
 </button>
 
 <Drawer

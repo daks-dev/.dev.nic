@@ -1,12 +1,12 @@
 import { Nav, type NavItem, type NavSite } from '@daks.dev/svelte.sdk';
 
 interface NavDraver {
-  header: Partial<NavItem>[];
-  activity: Partial<NavItem>[];
-  footer: Partial<NavItem>[];
+  header: NavItem[];
+  activity: NavItem[];
+  footer: NavItem[];
 }
 
-const activity: Partial<NavItem>[] = [
+export const activity: NavItem[] = [
   {
     href: '/inspection',
     label: 'Обследование зданий и сооружений'
@@ -109,13 +109,17 @@ export const draver: Partial<NavDraver> = {
     {
       href: '/partners',
       label: 'Партнёры'
+    },
+    {
+      href: '/feedback',
+      label: 'Отзывы'
     }
   ],
   activity,
   footer: [
     {
-      href: '/feedback',
-      label: 'Отзывы'
+      href: '/articles',
+      label: 'Статьи'
     },
     {
       href: '/privacy',

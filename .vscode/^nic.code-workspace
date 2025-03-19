@@ -6,6 +6,7 @@
   ],
   "settings": {
     "files.associations": {
+      "*.svx": "svelte",
       "*.css": "tailwindcss"
     },
     "tailwindCSS.experimental.configFile": "../src/app.css"

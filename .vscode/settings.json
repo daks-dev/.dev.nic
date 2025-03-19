@@ -3,6 +3,9 @@
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
+  "[svx]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
   "prettier.prettierPath": "../../node_modules/prettier"
   // "prettier.configPath": "../../.prettierrc",
   // "prettier.ignorePath": "../../.prettierignore"

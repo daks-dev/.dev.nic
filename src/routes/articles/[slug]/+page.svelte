@@ -3,8 +3,7 @@
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
-
-  const { slug, title, description, component: Component, images } = data;
+  const { title, description, published, component: Component, images } = data;
 
   /*
       {#await promise then { default: Component }}
@@ -14,7 +13,7 @@
 </script>
 
 <YandexMetrikaHit
-  title="{title} | НИЦ СЭ • Новости"
+  title="{title} | НИЦ СЭ • Статьи"
   {description} />
 
 <main itemprop="mainContentOfPage">
@@ -22,7 +21,7 @@
     <h1 class="title mb-4">{title}</h1>
     <FormattedDate
       class="text-xl tracking-wide text-slate-600 dark:text-slate-400"
-      date={slug}
+      date={published ?? '--'}
       parse="YY-MM-DD" />
   </header>
 

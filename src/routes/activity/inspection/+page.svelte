@@ -6,7 +6,7 @@
   const { dataset, sources, thumbnails } = data;
 
   const title = 'НИЦ СЭ • Обследование зданий и сооружений';
-  const description = 'Обследование зданий и сооружений АО НИЦ «Строительная экспертиза»';
+  const description = 'Обследование зданий и сооружений | АО НИЦ «Строительная экспертиза»';
 </script>
 
 <YandexMetrikaHit
@@ -19,7 +19,7 @@
   </header>
 
   <div class="frame">
-    <div class={['readable', 'sm:text-justify']}>
+    <div class="readable">
       <CarouselKit
         {dataset}
         class={[

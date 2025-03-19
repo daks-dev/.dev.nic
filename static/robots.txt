@@ -11,5 +11,11 @@ Disallow: /services
 Disallow: /tolerances
 Disallow: /work
 #
+Disallow: /articles/test
+#
+Disallow: /news/23-10-31
+Disallow: /news/23-11-01
+Disallow: /news/23-11-02
+#
 Sitemap: https://dev.stroyexp.info/sitemap.xml
 #

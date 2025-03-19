@@ -7,28 +7,32 @@ interface Data extends MDLoadData {
   metadata: {
     title: string;
     description: string;
+    published: string | Date;
   };
 }
 
 const promises = {
-  svx: import.meta.glob('$lib/content/news/**/index.svx'),
-  images: import.meta.glob('$lib/content/news/**/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
-    query: { w: 288, meta: true },
-    import: 'default'
-  })
+  svx: import.meta.glob('$lib/content/articles/**/index.svx'),
+  images: import.meta.glob(
+    '$lib/content/articles/**/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)',
+    {
+      query: { w: 288, meta: true },
+      import: 'default'
+    }
+  )
 };
 
 const filter = (obj: Record<string, unknown>, dir: string | undefined) =>
   Object.keys(obj).filter((x) => x.split('/').at(-2) === dir);
 
 export const load: PageLoad = async ({ params }) => {
-  if (/^\d{2}-\d{2}-\d{2}$/.test(params.slug)) {
+  if (/^[a-z0-9\-]+$/.test(params.slug)) {
     const { slug } = params;
     const path = filter(promises.svx, slug)[0];
     if (path) {
       const promise = promises.svx[path]() as Promise<Data>;
       const {
-        metadata: { title, description },
+        metadata: { title, description, published },
         default: component
       } = await promise;
 
@@ -38,9 +42,9 @@ export const load: PageLoad = async ({ params }) => {
       if (!images.length) images[0] = placeholder;
 
       return {
-        slug,
         title,
         description,
+        published,
         component,
         images
       };
