@@ -9,7 +9,7 @@ const canonical = process.env.PUBLIC_APP_CANONICAL
   ? new URL(process.env.PUBLIC_APP_CANONICAL).origin
   : '';
 
-const news = Object.keys(import.meta.glob('$lib/content/news/**/index.md')).map(
+const news = Object.keys(import.meta.glob('$lib/content/news/**/index.svx')).map(
   (x) => `/news/${x.split('/').at(-2)}`
 );
 

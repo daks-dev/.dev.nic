@@ -107,13 +107,20 @@
 
   :where(.readable) {
     @apply text-sm/relaxed sm:text-base/relaxed bp:text-lg/relaxed;
-    @apply dark:font-light;
+    @apply font-light;
     :where(h2, h3, h4) {
       @apply tracking-normal;
       @apply text-xl sm:text-1.5xl lg:text-2xl 2xl:text-2.5xl;
     }
     :where(p) {
       @apply xs:text-justify;
+    }
+    :where(a) {
+      @apply text-cyan-800 dark:text-cyan-600;
+      @apply hover:decoration-inherit;
+    }
+    :where(b, strong) {
+      @apply font-medium;
     }
     :where(table, th, td) {
       @apply border-slate-500 dark:border-slate-400;

@@ -6,8 +6,8 @@
   ],
   "settings": {
     "files.associations": {
-      "*.svx": "svelte",
-      "*.css": "tailwindcss"
+      "*.css": "tailwindcss",
+      "*.svx": "markdown"
     },
     "tailwindCSS.experimental.configFile": "../src/app.css"
   }
