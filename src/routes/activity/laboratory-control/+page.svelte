@@ -2,6 +2,9 @@
   import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
   import { YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
+  import { activity } from '$lib/configs';
+  const links = activity.find((x) => x.href === '/laboratory-control')?.links;
+
   const title = 'НИЦ СЭ • Лабораторный контроль';
   const description = 'Лабораторный контроль АО НИЦ «Строительная экспертиза»';
 </script>
@@ -16,6 +19,13 @@
   </header>
 
   <div class={twMerge('frame', 'readable', 'sm:text-justify')}>
+    {#if links}
+      <div>
+        {#each links as { href, label }}
+          <a {href}>{label}</a>
+        {/each}
+      </div>
+    {/if}
     <p>
       Лабораторное сопровождение, выполняемое Научно-исследовательским центром «Строительная
       экспертиза», подразделяется на два этапа. Первый этап контроля &mdash; входной контроль

@@ -14,7 +14,7 @@
 </script>
 
 <YandexMetrikaHit
-  title={`${title} [${slug}] | НИЦ СЭ • Новости`}
+  title={`${title} [${slug}] НИЦ СЭ • Новости`}
   description={`[${slug}]: ${description}`} />
 
 <main itemprop="mainContentOfPage">
