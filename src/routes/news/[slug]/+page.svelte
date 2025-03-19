@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { Figure, FormattedDate, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
   import type { PageProps } from './$types';
@@ -11,6 +12,8 @@
         <Component />
       {/await}
   */
+
+  onMount(() => document?.lazyload.update());
 </script>
 
 <YandexMetrikaHit
@@ -33,7 +36,12 @@
         <Figure
           {data}
           custom={{
-            image: 'rounded-md max-lg:w-48'
+            image: [
+              'max-lg:w-48',
+              'rounded-md',
+              'hover:scale-105',
+              'transition-transform duration-500 ease-in-out'
+            ]
           }}
           alt={`${title.toLowerCase()} ${idx}`} />
         <link
