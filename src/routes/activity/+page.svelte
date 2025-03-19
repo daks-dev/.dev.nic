@@ -4,7 +4,7 @@
 
   import { activity } from '$lib/configs';
 
-  const title = 'НИЦ СЭ • Направления деятельности';
+  const title = 'НИЦ «СЭ» • Направления деятельности';
   const description = 'Направления деятельности АО НИЦ «Строительная экспертиза»';
 </script>
 

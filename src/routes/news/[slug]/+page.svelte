@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { FormattedDate, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
+  import { Figure, FormattedDate, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
@@ -14,7 +14,7 @@
 </script>
 
 <YandexMetrikaHit
-  title={`${title} [${slug}] НИЦ СЭ • Новости`}
+  title={`${title} [${slug}] • Новости`}
   description={`[${slug}]: ${description}`} />
 
 <main itemprop="mainContentOfPage">
@@ -29,13 +29,16 @@
   <div class="frame flex gap-8 max-sm:flex-col">
     <div
       class="mt-2 flex shrink-0 flex-wrap justify-around gap-5 max-sm:order-last sm:flex-col sm:justify-start">
-      {#each images as { src, width, height }}
-        <img
-          class="rounded-md max-lg:w-48"
-          {src}
-          {width}
-          {height}
-          alt="" />
+      {#each images as data, idx}
+        <Figure
+          {data}
+          custom={{
+            image: 'rounded-md max-lg:w-48'
+          }}
+          alt={`${title.toLowerCase()} ${idx}`} />
+        <link
+          rel="image"
+          href={data.src} />
       {/each}
     </div>
     <div class="readable grow text-justify leading-relaxed bp:text-lg/relaxed">

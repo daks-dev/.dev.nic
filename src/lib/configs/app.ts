@@ -3,7 +3,7 @@ const config = {
   scope: '/',
 
   name: 'АО НИЦ «СЭ»',
-  shortName: 'НИЦ СЭ',
+  shortName: 'НИЦ «СЭ»',
   description: 'Независимая строительная экспертиза в Москве',
 
   displayOverride: ['fullscreen', 'minimal-ui'],

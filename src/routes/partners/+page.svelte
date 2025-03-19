@@ -6,7 +6,7 @@
 
   const { dataset } = data;
 
-  const title = 'НИЦ СЭ • Партнёры';
+  const title = 'НИЦ «СЭ» • Партнёры';
   const description = 'Партнёры АО НИЦ «Строительная экспертиза»';
 </script>
 

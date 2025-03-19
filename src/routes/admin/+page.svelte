@@ -9,7 +9,7 @@
   let waiting = false;
 
   const robots = 'noindex, follow';
-  const title = 'НИЦ СЭ • Admin';
+  const title = 'НИЦ «СЭ» • Admin';
 </script>
 
 <Head

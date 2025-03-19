@@ -13,7 +13,7 @@
 </script>
 
 <YandexMetrikaHit
-  title="{title} | НИЦ СЭ • Статьи"
+  title="{title} | НИЦ «СЭ» • Статьи"
   {description} />
 
 <main itemprop="mainContentOfPage">

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { YandexMetrikaHit, CardPlaceholder, TestimonialPlaceholder } from '@daks.dev/svelte.sdk';
 
-  const title = 'НИЦ СЭ • Отзывы';
+  const title = 'НИЦ «СЭ» • Отзывы';
   const description = 'Отзывы заказчиков о предприятии АО НИЦ «Строительная экспертиза»';
 </script>
 

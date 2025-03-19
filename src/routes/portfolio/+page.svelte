@@ -5,7 +5,7 @@
   let { data }: PageProps = $props();
   const { sources, thumbnails } = data;
 
-  const title = 'НИЦ СЭ • Проекты';
+  const title = 'НИЦ «СЭ» • Проекты';
   const description = 'Проекты предпрятия АО НИЦ «Строительная экспертиза»';
 </script>
 

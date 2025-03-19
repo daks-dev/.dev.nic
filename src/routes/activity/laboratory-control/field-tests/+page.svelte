@@ -1,7 +1,7 @@
 <script lang="ts">
   import { YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
-  const title = 'НИЦ СЭ • Натурные испытания';
+  const title = 'НИЦ «СЭ» • Натурные испытания';
   const description = 'Натурные испытания | АО НИЦ «Строительная экспертиза»';
 </script>
 

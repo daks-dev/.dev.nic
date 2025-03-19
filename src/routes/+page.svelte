@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { BROWSER } from 'esm-env';
-  import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
   import { onMount } from 'svelte';
   import { Button } from 'flowbite-svelte';
   import { Icon, TestimonialPlaceholder, Video, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
@@ -8,7 +6,7 @@
   import microdata from '$lib/configs/microdata';
   const { email, telephone, address } = microdata.organization;
 
-  const title = 'НИЦ СЭ • Строительная экспертиза';
+  const title = 'НИЦ «СЭ» • Строительная экспертиза';
   const description = 'АО НИЦ «Строительная экспертиза», Москва';
 
   let opacity = $state(0);

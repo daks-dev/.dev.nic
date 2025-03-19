@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
   import { LightboxKit, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
   const { thumbnails, sources } = data;
 
-  const title = 'НИЦ СЭ • Сертификация и аккредитация';
+  const title = 'НИЦ «СЭ» • Сертификация и аккредитация';
   const description = 'Сертификация и аккредитация | АО НИЦ «Строительная экспертиза»';
 </script>
 
@@ -19,7 +18,7 @@
     <h1 class="title">Сертификация и аккредитация</h1>
   </header>
 
-  <div class={twMerge('readable', 'frame flex flex-col md:block', 'sm:text-justify')}>
+  <div class={['frame readable', 'flex flex-col md:block']}>
     <LightboxKit
       {sources}
       {thumbnails}

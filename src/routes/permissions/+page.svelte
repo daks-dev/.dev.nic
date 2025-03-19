@@ -6,7 +6,7 @@
 
   const { sources, thumbnails } = data;
 
-  const title = 'НИЦ СЭ • Допуски';
+  const title = 'НИЦ «СЭ» • Допуски';
   const description = 'Допуски предпрятия АО НИЦ «Строительная экспертиза»';
 </script>
 

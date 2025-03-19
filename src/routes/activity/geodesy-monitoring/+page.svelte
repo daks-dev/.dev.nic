@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
   import { YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
-  const title = 'НИЦ СЭ • Геодезия и мониторинг';
+  const title = 'НИЦ «СЭ» • Геодезия и мониторинг';
   const description = 'Геодезия и мониторинг АО НИЦ «Строительная экспертиза»';
 </script>
 
@@ -15,7 +14,7 @@
     <h1 class="title">Геодезия и мониторинг</h1>
   </header>
 
-  <div class={twMerge('frame', 'readable', 'sm:text-justify')}>
+  <div class="frame readable">
     <p>
       Научно-исследовательский центр «Строительная Экспертиза» обладает мощной базой геодезического
       оборудования, позволяющего в кротчайшие сроки выполнять различные работы, связанные с

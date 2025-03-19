@@ -6,7 +6,7 @@
   let { data }: PageProps = $props();
   const { items } = data;
 
-  const title = 'НИЦ СЭ • Статьи';
+  const title = 'НИЦ «СЭ» • Статьи';
   const description = 'Статьи АО НИЦ «Строительная экспертиза»';
 
   // const random = (x?: unknown[]): number => (x?.length ? Math.floor(Math.random() * x.length) : -1);
@@ -53,6 +53,9 @@
                 parse="YY-MM-DD" />
             {/snippet}
           </Figure>
+          <link
+            rel="image"
+            href={images[0].src} />
         </a>
       {/if}
     {:else}

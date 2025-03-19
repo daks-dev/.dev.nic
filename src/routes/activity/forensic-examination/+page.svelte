@@ -6,7 +6,7 @@
   let { data }: PageProps = $props();
   const { thumbnail, source } = data;
 
-  const title = 'НИЦ СЭ • Судебная экспертиза';
+  const title = 'НИЦ «СЭ» • Судебная экспертиза';
   const description = 'Судебная экспертиза АО НИЦ «Строительная экспертиза»';
 
   onMount(() => document?.lazyload.update());

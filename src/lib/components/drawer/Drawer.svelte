@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
   import { sineInOut } from 'svelte/easing';
   import { afterNavigate } from '$app/navigation';
   import { Drawer, Sidebar, SidebarBrand, SidebarWrapper } from 'flowbite-svelte';
@@ -35,14 +34,14 @@
 
 <button
   on:click={open}
-  class={twMerge(
+  class={[
     'group',
     'fixed top-1/2 z-20 h-[35vmin] -translate-y-1/2 pr-6',
     'rounded-r-lg',
     'bg-neutral-400/70 dark:bg-gray-700/50 dark:hover:bg-gray-400/50',
     'hover:cursor-pointer hover:bg-gray-400 hover:pr-8',
     'transition-colors duration-100'
-  )}
+  ]}
   aria-label="drawer">
   <span
     class={[

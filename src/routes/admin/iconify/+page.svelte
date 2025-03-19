@@ -19,7 +19,7 @@
   };
 
   const robots = 'noindex, follow';
-  const title = 'НИЦ СЭ • Admin [ Iconify ]';
+  const title = 'НИЦ «СЭ» • Admin [ Iconify ]';
 </script>
 
 <Head

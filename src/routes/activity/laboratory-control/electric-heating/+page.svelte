@@ -1,7 +1,7 @@
 <script lang="ts">
   import { YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
-  const title = 'НИЦ СЭ • Электропрогрев железобетонных конструкций';
+  const title = 'НИЦ «СЭ» • Электропрогрев железобетонных конструкций';
   const description =
     'Электропрогрев железобетонных конструкций | АО НИЦ «Строительная экспертиза»';
 </script>

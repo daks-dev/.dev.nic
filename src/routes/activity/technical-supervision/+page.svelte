@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
   import { YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
-  const title = 'НИЦ СЭ • Технический надзор';
+  const title = 'НИЦ «СЭ» • Технический надзор';
   const description = 'Технический надзор АО НИЦ «Строительная экспертиза»';
 </script>
 
@@ -15,7 +14,7 @@
     <h1 class="title">Технический надзор</h1>
   </header>
 
-  <div class={twMerge('frame', 'readable', 'sm:text-justify')}>
+  <div class="frame readable">
     <p>
       <strong>Технический надзор</strong> (технадзор) в строительстве — это комплекс мер, целью
       которых является сделать весь процесс проектных, сметных, инженерных и строительно-монтажных

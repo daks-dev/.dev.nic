@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { twMerge } from '@daks.dev/svelte.sdk/tailwind-merge';
   import { YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
-  const title = 'НИЦ СЭ • Энергоаудит';
+  const title = 'НИЦ «СЭ» • Энергоаудит';
   const description =
     'Энергоэффективность и воздухопроницаемость | АО НИЦ «Строительная экспертиза»';
 </script>
@@ -16,7 +15,7 @@
     <h1 class="title">Энергоэффективность <small>и воздухопроницаемость</small></h1>
   </header>
 
-  <div class={twMerge('readable', 'frame', 'sm:text-justify')}>
+  <div class="frame readable">
     <p>
       Под энергетическим аудитом (с целью оформления отчета по энергоаудиту) в настоящее время
       понимается комплексное обследование организаций, предприятий и отдельных объектов по их

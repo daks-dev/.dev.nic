@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <title>НИЦ СЭ • {page.status}</title>
+  <title>НИЦ «СЭ» • {page.status}</title>
   <meta
     name="description"
     content="Ошибка в работе приложения" />

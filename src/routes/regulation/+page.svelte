@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
-  const title = 'НИЦ СЭ • Регламент';
+  const title = 'НИЦ «СЭ» • Регламент';
   const description =
     'Регламент АО НИЦ «Строительная экспертиза» по организации и проведения негосударственной экспертизы проектной документации и результатов инженерных изысканий';
 
