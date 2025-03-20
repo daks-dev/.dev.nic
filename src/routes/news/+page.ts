@@ -6,6 +6,7 @@ type Data = {
   metadata: {
     title: string;
     description: string;
+    poster?: false | number;
   };
 };
 
@@ -26,17 +27,14 @@ export const load: PageLoad = async () => {
       .sort((x, y) => (x > y ? -1 : 1))
       .map(async (path) => {
         const slug = path.split('/').at(-2);
-
         const {
-          metadata: { title, description }
+          metadata: { title, description, poster = 0 }
         } = (await promises.svx[path]()) as Data;
-
         const images: ImageMetadata[] = [];
         for (const image of filter(promises.images, slug))
           images.push((await promises.images[image]()) as ImageMetadata);
         if (!images.length) images[0] = placeholder;
-
-        return { slug, title, description, images };
+        return { slug, title, description, poster, images };
       })
   );
   return { items };

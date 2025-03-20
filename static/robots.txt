@@ -11,6 +11,9 @@ Disallow: /services
 Disallow: /tolerances
 Disallow: /work
 #
+Disallow: /images/
+Disallow: /node/
+#
 Disallow: /articles/test
 #
 Disallow: /news/23-10-31
