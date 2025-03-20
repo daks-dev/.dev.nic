@@ -56,7 +56,7 @@ export const nav: NavSite = {
         links: activity
       },
       {
-        href: '/portfolio',
+        href: '/projects',
         label: 'Проекты'
       },
       {

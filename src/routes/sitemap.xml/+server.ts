@@ -9,6 +9,10 @@ const canonical = process.env.PUBLIC_APP_CANONICAL
   ? new URL(process.env.PUBLIC_APP_CANONICAL).origin
   : '';
 
+const articles = Object.keys(import.meta.glob('$lib/content/articles/**/index.svx')).map(
+  (x) => `/articles/${x.split('/').at(-2)}`
+);
+
 const news = Object.keys(import.meta.glob('$lib/content/news/**/index.svx')).map(
   (x) => `/news/${x.split('/').at(-2)}`
 );
@@ -16,6 +20,7 @@ const news = Object.keys(import.meta.glob('$lib/content/news/**/index.svx')).map
 const urlset =
   canonical &&
   map
+    .concat(articles)
     .concat(news)
     .sort()
     .map(

@@ -19,6 +19,8 @@
   </header>
 
   <LightboxKit
+    {sources}
+    {thumbnails}
     class="frame gap-8"
     custom={{
       overlay: 'overflow-offset'
@@ -26,8 +28,7 @@
     options={{
       behaviour: 'loop'
     }}
-    {sources}
-    {thumbnails}
+    alt="проект ниц «строительная экспертиза»"
     sign
     centered
     rounded

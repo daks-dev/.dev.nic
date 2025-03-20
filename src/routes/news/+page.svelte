@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { Figure, FormattedDate, Sign, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
   import { ListMode } from '$lib/components';
+
   import { modes } from '$lib/state';
 
   import placeholder from '$lib/assets/images/cube.webp?w=288&aspect=16:9&fit=contain&meta';

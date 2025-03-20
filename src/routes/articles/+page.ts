@@ -7,6 +7,7 @@ type Data = {
     title: string;
     description: string;
     published: string | Date;
+    poster?: false | number;
   };
 };
 
@@ -32,7 +33,7 @@ export const load: PageLoad = async () => {
         const slug = path.split('/').at(-2);
 
         const {
-          metadata: { title, description, published }
+          metadata: { title, description, published, poster = 0 }
         } = (await promises.svx[path]()) as Data;
 
         const images: ImageMetadata[] = [];
@@ -40,7 +41,7 @@ export const load: PageLoad = async () => {
           images.push((await promises.images[image]()) as ImageMetadata);
         if (!images.length) images[0] = placeholder;
 
-        return { slug, title, description, published, images };
+        return { slug, title, description, published, poster, images };
       })
   );
   return { items };

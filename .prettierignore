@@ -13,4 +13,5 @@ static/
 
 .master/
 
+nginx.inc
 src/lib/assets/iconify/bundles.json
