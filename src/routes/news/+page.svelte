@@ -21,7 +21,7 @@
   {title}
   {description} />
 
-<main itemprop="mainContentOfPage snap-start">
+<main itemprop="mainContentOfPage">
   <header class="frame">
     <h1 class="title">Новости</h1>
   </header>
@@ -39,7 +39,7 @@
         class={[
           'frame',
           'grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3',
-          'place-content-start gap-8'
+          'place-content-start gap-x-6 gap-y-4 lg:gap-x-12 lg:gap-y-8'
         ]}>
         {#each items as { slug, title, description, poster, images }, idx}
           {@const image = poster === false ? placeholder : images[poster]}
@@ -53,7 +53,7 @@
             <Figure
               custom={{
                 image: [
-                  'mb-2 aspect-video h-auto w-48 lg:w-full',
+                  'mb-2 aspect-video h-auto w-48 sm:w-64 lg:w-full',
                   'bg-neutral-500/10',
                   'rounded-md',
                   'grayscale group-oversee:grayscale-0',

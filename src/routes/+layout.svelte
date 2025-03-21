@@ -25,7 +25,9 @@
 <RouteTransition
   class="flex grow flex-col"
   refresh={data.refresh}
-  mode="1">
+  duration={225}
+  delay={125}
+  mode={1}>
   {@render children?.()}
 </RouteTransition>
 

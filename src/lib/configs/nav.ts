@@ -119,7 +119,7 @@ export const draver: Partial<NavDraver> = {
   footer: [
     {
       href: '/articles',
-      label: 'Статьи'
+      label: 'Инфрмация'
     },
     {
       href: '/privacy',

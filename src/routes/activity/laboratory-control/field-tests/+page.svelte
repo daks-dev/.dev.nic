@@ -9,7 +9,7 @@
   {title}
   {description} />
 
-<main itemprop="mainContentOfPage snap-start">
+<main itemprop="mainContentOfPage">
   <header class="frame">
     <h1 class="title">Натурные испытания</h1>
   </header>

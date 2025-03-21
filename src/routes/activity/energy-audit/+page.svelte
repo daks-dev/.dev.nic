@@ -10,7 +10,7 @@
   {title}
   {description} />
 
-<main itemprop="mainContentOfPage snap-start">
+<main itemprop="mainContentOfPage">
   <header class="frame">
     <h1 class="title">Энергоэффективность <small>и воздухопроницаемость</small></h1>
   </header>

@@ -3,7 +3,6 @@
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
-
   const { sources, thumbnails } = data;
 
   const title = 'НИЦ «СЭ» • Допуски';
@@ -20,6 +19,8 @@
   </header>
 
   <LightboxKit
+    {sources}
+    {thumbnails}
     class="frame gap-8"
     custom={{
       overlay: 'overflow-offset'
@@ -27,8 +28,7 @@
     options={{
       behaviour: 'loop'
     }}
-    {sources}
-    {thumbnails}
+    alt="допуск ниц «строительная экспертиза»"
     sign
     centered
     shadow

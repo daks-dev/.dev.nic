@@ -13,7 +13,7 @@
   {title}
   {description} />
 
-<main itemprop="mainContentOfPage snap-start">
+<main itemprop="mainContentOfPage">
   <header class="frame">
     <h1 class="title">Обследование <small>зданий и сооружений</small></h1>
   </header>

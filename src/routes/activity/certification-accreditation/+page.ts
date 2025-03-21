@@ -6,7 +6,7 @@ export const load: PageLoad = () => ({
       '$lib/content/activity/certification-accreditation/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)',
       {
         eager: true,
-        query: { w: 288, fit: 'cover', meta: true },
+        query: { w: 288, meta: true },
         import: 'default'
       }
     )

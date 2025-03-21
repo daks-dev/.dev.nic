@@ -31,12 +31,10 @@ export const load: PageLoad = async ({ params }) => {
         metadata: { title, description },
         default: component
       } = await promise;
-
       const images: ImageMetadata[] = [];
       for (const image of filter(promises.images, slug))
         images.push((await promises.images[image]()) as ImageMetadata);
       if (!images.length) images[0] = placeholder;
-
       return {
         slug,
         title,

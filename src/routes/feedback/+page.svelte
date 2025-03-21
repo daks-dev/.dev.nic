@@ -1,5 +1,9 @@
 <script lang="ts">
-  import { YandexMetrikaHit, CardPlaceholder, TestimonialPlaceholder } from '@daks.dev/svelte.sdk';
+  import { YandexMetrikaHit, LightboxKit } from '@daks.dev/svelte.sdk';
+
+  import type { PageProps } from './$types';
+  let { data }: PageProps = $props();
+  const { sources, thumbnails } = data;
 
   const title = 'НИЦ «СЭ» • Отзывы';
   const description = 'Отзывы заказчиков о предприятии АО НИЦ «Строительная экспертиза»';
@@ -11,15 +15,22 @@
 
 <main itemprop="mainContentOfPage">
   <header class="frame">
-    <h1 class="title">Отзывы</h1>
+    <h1 class="title">Отзывы заказчиков</h1>
   </header>
 
-  <div class={['frame mb-16', 'flex flex-wrap justify-around gap-y-8']}>
-    {#each Array(5) as _val}
-      <CardPlaceholder
-        class={['w-full max-w-sm', 'odd:bg-green-700/20 even:bg-red-700/20', 'snap-start']}
-        animate="" />
-    {/each}
-  </div>
-  <TestimonialPlaceholder class="wrapper-lg max-w-xl" />
+  <LightboxKit
+    {sources}
+    {thumbnails}
+    class="frame gap-8"
+    custom={{
+      overlay: 'overflow-offset'
+    }}
+    options={{
+      behaviour: 'loop'
+    }}
+    alt="отзыв заказчика"
+    sign
+    centered
+    shadow
+    scale />
 </main>
