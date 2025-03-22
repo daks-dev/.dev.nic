@@ -31,8 +31,8 @@
         slot="thumbnail"
         class="group relative">
         <Sign
+          class="top-1 left-1"
           icon="ic:round-zoom-out-map"
-          class="right-0 m-2"
           dark />
         <Figure
           data={thumbnail}

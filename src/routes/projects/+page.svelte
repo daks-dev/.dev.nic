@@ -29,10 +29,11 @@
       behaviour: 'loop'
     }}
     alt="проект ниц «строительная экспертиза»"
-    sign
+    sign="ic:round-zoom-out-map"
+    adaptive
     centered
     rounded
     shadow
-    scale
-    grayscale />
+    grayscale
+    scale />
 </main>

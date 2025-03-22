@@ -13,7 +13,14 @@ interface Data extends MDLoadData {
 
 const promises = {
   svx: import.meta.glob('$lib/content/articles/**/index.svx'),
-  images: import.meta.glob(
+  sources: import.meta.glob(
+    '$lib/content/articles/**/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)',
+    {
+      query: { meta: true },
+      import: 'default'
+    }
+  ),
+  thumbnails: import.meta.glob(
     '$lib/content/articles/**/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)',
     {
       query: { w: 288, meta: true },
@@ -35,18 +42,21 @@ export const load: PageLoad = async ({ params }) => {
         metadata: { title, description, published },
         default: component
       } = await promise;
-
-      const images: ImageMetadata[] = [];
-      for (const image of filter(promises.images, slug))
-        images.push((await promises.images[image]()) as ImageMetadata);
-      if (!images.length) images[0] = placeholder;
-
+      const sources: ImageMetainfo[] = [];
+      for (const key of filter(promises.sources, slug)) {
+        sources.push((await promises.sources[key]()) as ImageMetainfo);
+      }
+      const thumbnails: ImageMetainfo[] = [];
+      for (const key of filter(promises.thumbnails, slug)) {
+        thumbnails.push((await promises.thumbnails[key]()) as ImageMetainfo);
+      }
       return {
         title,
         description,
         published,
         component,
-        images
+        sources,
+        thumbnails
       };
     }
     throw error(404, 'Not found [data]');

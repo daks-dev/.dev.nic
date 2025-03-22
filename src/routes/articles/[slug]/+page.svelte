@@ -1,10 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { Figure, FormattedDate, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
+  import { LightboxKit, FormattedDate, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
-  const { title, description, published, component: Component, images } = data;
+  const { title, description, published, component: Component, sources, thumbnails } = data;
 
   /*
       {#await promise then { default: Component }}
@@ -29,26 +29,26 @@
   </header>
 
   <div class="frame flex gap-8 max-sm:flex-col">
-    {#if images.length}
-      <div
-        class="mt-2 flex shrink-0 flex-wrap justify-around gap-5 max-sm:order-last sm:flex-col sm:justify-start">
-        {#each images as data, idx}
-          <Figure
-            {data}
-            custom={{
-              image: [
-                'max-lg:w-48',
-                'rounded-md',
-                'hover:scale-105',
-                'transition-transform duration-500 ease-in-out'
-              ]
-            }}
-            alt={`${title.toLowerCase()} ${idx}`} />
-          <link
-            rel="image"
-            href={data.src} />
-        {/each}
-      </div>
+    {#if sources.length}
+      <LightboxKit
+        {sources}
+        {thumbnails}
+        class={['mt-1', 'flex shrink-0 flex-col justify-around gap-y-5', 'max-sm:order-last']}
+        custom={{
+          overlay: 'overflow-offset'
+        }}
+        options={{
+          behaviour: 'loop'
+        }}
+        {title}
+        {description}
+        alt={title.toLowerCase()}
+        sign="ic:round-zoom-out-map"
+        adaptive
+        centered
+        rounded
+        shadow
+        scale />
     {/if}
     <div class="readable grow">
       <Component />

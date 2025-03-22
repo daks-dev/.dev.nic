@@ -29,7 +29,8 @@
       behaviour: 'loop'
     }}
     alt="допуск ниц «строительная экспертиза»"
-    sign
+    sign="ic:round-zoom-out-map"
+    adaptive
     centered
     shadow
     scale />

@@ -33,8 +33,9 @@
       options={{
         behaviour: 'loop'
       }}
-      alt="обследование зданий и сооружений 1"
-      sign
+      alt="сертификация и аккредитация"
+      sign="ic:round-zoom-out-map"
+      adaptive
       centered
       shadow
       scale />

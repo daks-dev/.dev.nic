@@ -74,7 +74,7 @@
       <svelte:fragment slot="thumbnail">
         <LightboxThumbnail>
           <Sign
-            class="top-2 left-5"
+            class="top-1 left-1"
             icon="ic:round-zoom-out-map"
             dark />
           <Figure

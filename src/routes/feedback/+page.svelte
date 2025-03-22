@@ -29,7 +29,8 @@
       behaviour: 'loop'
     }}
     alt="отзыв заказчика"
-    sign
+    sign="ic:round-zoom-out-map"
+    adaptive
     centered
     shadow
     scale />

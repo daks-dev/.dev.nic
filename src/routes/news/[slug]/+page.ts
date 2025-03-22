@@ -1,8 +1,6 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
-import placeholder from '$lib/assets/images/cube.webp?w=288&aspect=16:9&fit=contain&meta';
-
 interface Data extends MDLoadData {
   metadata: {
     title: string;
@@ -12,10 +10,17 @@ interface Data extends MDLoadData {
 
 const promises = {
   svx: import.meta.glob('$lib/content/news/**/index.svx'),
-  images: import.meta.glob('$lib/content/news/**/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
-    query: { w: 288, meta: true },
+  sources: import.meta.glob('$lib/content/news/**/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
+    query: { meta: true },
     import: 'default'
-  })
+  }),
+  thumbnails: import.meta.glob(
+    '$lib/content/news/**/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)',
+    {
+      query: { w: 288, meta: true },
+      import: 'default'
+    }
+  )
 };
 
 const filter = (obj: Record<string, unknown>, dir: string | undefined) =>
@@ -31,16 +36,21 @@ export const load: PageLoad = async ({ params }) => {
         metadata: { title, description },
         default: component
       } = await promise;
-      const images: ImageMetadata[] = [];
-      for (const image of filter(promises.images, slug))
-        images.push((await promises.images[image]()) as ImageMetadata);
-      // if (!images.length) images[0] = placeholder;
+      const sources: ImageMetainfo[] = [];
+      for (const key of filter(promises.sources, slug)) {
+        sources.push((await promises.sources[key]()) as ImageMetainfo);
+      }
+      const thumbnails: ImageMetainfo[] = [];
+      for (const key of filter(promises.thumbnails, slug)) {
+        thumbnails.push((await promises.thumbnails[key]()) as ImageMetainfo);
+      }
       return {
         slug,
         title,
         description,
         component,
-        images
+        sources,
+        thumbnails
       };
     }
     throw error(404, 'Not found [data]');

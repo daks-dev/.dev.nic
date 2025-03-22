@@ -77,8 +77,11 @@
     options={{
       behaviour: 'loop'
     }}
+    title="НИЦ «Строительная экспертиза»"
+    description="Обследование зданий и сооружений"
     alt="обследование зданий и сооружений 1"
-    sign
+    sign="ic:round-zoom-out-map"
+    adaptive
     centered
     rounded
     shadow

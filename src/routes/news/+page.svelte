@@ -47,7 +47,8 @@
             class="group relative oversee:text-sky-500"
             href="/news/{slug}">
             <Sign
-              class="top-10 left-2"
+              icon="mdi:link-variant"
+              class="top-9"
               link
               dark />
             <Figure

@@ -35,7 +35,7 @@
   {href}
   {...rest}>
   <Sign
-    class="top-1 left-1"
+    icon="mdi:link-variant"
     link
     small />
   {@render header?.()}
