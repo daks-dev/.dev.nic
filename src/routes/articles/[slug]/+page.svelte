@@ -29,26 +29,28 @@
   </header>
 
   <div class="frame flex gap-8 max-sm:flex-col">
-    <div
-      class="mt-2 flex shrink-0 flex-wrap justify-around gap-5 max-sm:order-last sm:flex-col sm:justify-start">
-      {#each images as data, idx}
-        <Figure
-          {data}
-          custom={{
-            image: [
-              'max-lg:w-48',
-              'rounded-md',
-              'hover:scale-105',
-              'transition-transform duration-500 ease-in-out'
-            ]
-          }}
-          alt={`${title.toLowerCase()} ${idx}`} />
-        <link
-          rel="image"
-          href={data.src} />
-      {/each}
-    </div>
-    <div class="readable grow text-justify leading-relaxed bp:text-lg/relaxed">
+    {#if images.length}
+      <div
+        class="mt-2 flex shrink-0 flex-wrap justify-around gap-5 max-sm:order-last sm:flex-col sm:justify-start">
+        {#each images as data, idx}
+          <Figure
+            {data}
+            custom={{
+              image: [
+                'max-lg:w-48',
+                'rounded-md',
+                'hover:scale-105',
+                'transition-transform duration-500 ease-in-out'
+              ]
+            }}
+            alt={`${title.toLowerCase()} ${idx}`} />
+          <link
+            rel="image"
+            href={data.src} />
+        {/each}
+      </div>
+    {/if}
+    <div class="readable grow">
       <Component />
     </div>
   </div>

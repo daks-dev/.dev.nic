@@ -39,7 +39,7 @@
         class={[
           'frame',
           'grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3',
-          'place-content-start gap-x-6 gap-y-4 lg:gap-x-12 lg:gap-y-8'
+          'place-content-start gap-8 lg:gap-12'
         ]}>
         {#each items as { slug, title, description, poster, images }, idx}
           {@const image = poster === false ? placeholder : images[poster]}
