@@ -4,15 +4,7 @@
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
-
-  const {
-    slug,
-    title,
-    description,
-    content,
-    sources,
-    modifieds
-  } = data;
+  const { slug, title, description, content, sources, modifieds } = data;
 
   onMount(() => document?.lazyload.update());
 </script>

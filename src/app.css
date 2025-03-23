@@ -87,12 +87,13 @@
   }
 }
 
-@utility placeholders {
-  @apply text-slate-600 dark:text-slate-400;
-}
 @utility leader {
   @apply text-slate-800 dark:text-slate-400;
   @apply text-base sm:text-lg bp:text-xl 2xl:text-1.5xl;
+}
+
+@utility placeholders {
+  @apply text-slate-600 dark:text-slate-400;
 }
 
 @import '@daks.dev/svelte.sdk/tailwind/css/readable';

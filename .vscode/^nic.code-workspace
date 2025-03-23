@@ -10,6 +10,9 @@
       "*.svx": "markdown",
       "*.inc": "nginx"
     },
-    "tailwindCSS.experimental.configFile": "../src/app.css"
+    "tailwindCSS.experimental.configFile": "../src/app.css",
+    "markdownlint.config": {
+      "MD033": { "allowed_elements": ["font", "small", "span"] }
+    }
   }
 }
