@@ -10,7 +10,7 @@ interface Data extends MDLoadData {
 }
 
 const promises = {
-  svx: import.meta.glob('$lib/content/news/**/index.svx'),
+  mds: import.meta.glob('$lib/content/news/**/index.(svx|mdx|md)'),
   sources: import.meta.glob('$lib/content/news/**/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
     query: { meta: true },
     import: 'default'
@@ -30,9 +30,9 @@ const filter = (obj: Record<string, unknown>, dir: string | undefined) =>
 export const load: PageServerLoad = async ({ params }) => {
   if (/^\d{2}-\d{2}-\d{2}$/.test(params.slug)) {
     const { slug } = params;
-    const path = filter(promises.svx, slug)[0];
+    const path = filter(promises.mds, slug)[0];
     if (path) {
-      const promise = promises.svx[path]() as Promise<Data>;
+      const promise = promises.mds[path]() as Promise<Data>;
       const {
         metadata: { title, description },
         default: component

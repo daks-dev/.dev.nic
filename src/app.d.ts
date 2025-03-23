@@ -8,7 +8,7 @@ declare interface MDLoadData {
   metadata: Record<string, unknown>;
   default: MDComponent;
 }
-declare module '*.svx' {
+declare module '*.(svx|mdx|md)' {
   const Component: MDComponent;
   export default Component;
   export const metadata: Record<string, unknown>;

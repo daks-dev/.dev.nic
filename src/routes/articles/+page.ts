@@ -12,7 +12,7 @@ type Data = {
 };
 
 const promises = {
-  svx: import.meta.glob('$lib/content/articles/**/index.svx'),
+  mds: import.meta.glob('$lib/content/articles/**/index.(svx|mdx|md)'),
   images: import.meta.glob(
     '$lib/content/articles/**/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)',
     {
@@ -27,7 +27,7 @@ const filter = (obj: Record<string, unknown>, dir: string | undefined) =>
 
 export const load: PageLoad = async () => {
   const items = await Promise.all(
-    Object.keys(promises.svx)
+    Object.keys(promises.mds)
       .sort((x, y) => (x > y ? -1 : 1))
       .map(async (path) => {
         const slug = path.split('/').at(-2);
@@ -36,7 +36,7 @@ export const load: PageLoad = async () => {
           images.push((await promises.images[image]()) as ImageMetadata);
         const {
           metadata: { title, description, published, poster = images.length ? 0 : false }
-        } = (await promises.svx[path]()) as Data;
+        } = (await promises.mds[path]()) as Data;
         return {
           slug,
           title,

@@ -11,7 +11,7 @@ interface Data extends MDLoadData {
 }
 
 const promises = {
-  svx: import.meta.glob('$lib/content/articles/**/index.svx'),
+  mds: import.meta.glob('$lib/content/articles/**/index.(svx|mdx|md)'),
   sources: import.meta.glob(
     '$lib/content/articles/**/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)',
     {
@@ -34,9 +34,9 @@ const filter = (obj: Record<string, unknown>, dir: string | undefined) =>
 export const load: PageServerLoad = async ({ params }) => {
   if (/^[a-z0-9\-]+$/.test(params.slug)) {
     const { slug } = params;
-    const path = filter(promises.svx, slug)[0];
+    const path = filter(promises.mds, slug)[0];
     if (path) {
-      const promise = promises.svx[path]() as Promise<Data>;
+      const promise = promises.mds[path]() as Promise<Data>;
       const {
         metadata: { title, description, published },
         default: component
@@ -55,7 +55,6 @@ export const load: PageServerLoad = async ({ params }) => {
         description,
         published,
         content,
-        // component,
         sources,
         modifieds
       };

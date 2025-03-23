@@ -10,6 +10,8 @@
 
   import placeholder from '$lib/assets/images/cube.webp?w=288&aspect=16:9&fit=contain&meta';
 
+  // const random = (x?: unknown[]): number => (x?.length ? Math.floor(Math.random() * x.length) : -1);
+
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
   const { items } = data;
@@ -32,7 +34,7 @@
   {#if items.length}
     <ListMode
       bind:mode
-      class="frame -mt-12 mb-3"
+      class="frame -mt-13 mb-4"
       length={items.length}
       app
       list />

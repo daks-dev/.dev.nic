@@ -32,7 +32,7 @@
   {#if items.length}
     <ListMode
       bind:mode
-      class="frame -mt-12 mb-3"
+      class="frame -mt-13 mb-4"
       length={items.length}
       app
       list />
