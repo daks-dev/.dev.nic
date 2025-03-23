@@ -23,5 +23,5 @@ export const a4 = async () => [
 
 export default async () => ({
   sources: await sources(),
-  thumbnails: await a4()
+  modifieds: await a4()
 });

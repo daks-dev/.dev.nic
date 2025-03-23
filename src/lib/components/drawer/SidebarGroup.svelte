@@ -1,12 +1,7 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import { page } from '$app/stores';
-  import {
-    SidebarDropdownItem,
-    //SidebarDropdownWrapper,
-    SidebarGroup,
-    SidebarItem
-  } from 'flowbite-svelte';
+  import { SidebarDropdownItem, SidebarGroup, SidebarItem } from 'flowbite-svelte';
   import SidebarDropdownWrapper from './SidebarDropdownWrapper.svelte';
   import type { NavItem } from '@daks.dev/svelte.sdk';
 

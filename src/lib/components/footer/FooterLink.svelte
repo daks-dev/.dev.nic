@@ -1,6 +1,5 @@
 <script lang="ts">
   import classNames from 'classnames';
-  //import A from 'flowbite-svelte';
 
   import type { ClassValue, SvelteHTMLElements } from 'svelte/elements';
   type Props = Omit<SvelteHTMLElements['span'], 'class'> & {

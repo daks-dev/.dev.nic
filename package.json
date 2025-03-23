@@ -1,6 +1,6 @@
 {
   "name": "@daks.dev/.dev.nic",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "NIC",
   "private": false,
   "scripts": {
@@ -20,7 +20,7 @@
     "run:update": "pnpm up"
   },
   "devDependencies": {
-    "@daks.dev/svelte.sdk": "^0.3.2",
+    "@daks.dev/svelte.sdk": "^0.3.3",
     "@iconify/svelte": "^4.2.0",
     "@nanostores/persistent": "^0.10.2",
     "@playwright/test": "^1.51.1",

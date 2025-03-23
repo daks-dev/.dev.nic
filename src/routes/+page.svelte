@@ -1,7 +1,17 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { Button } from 'flowbite-svelte';
-  import { Icon, TestimonialPlaceholder, Video, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
+  import {
+    Icon,
+    CarouselKit,
+    TestimonialPlaceholder,
+    Video,
+    YandexMetrikaHit
+  } from '@daks.dev/svelte.sdk';
+
+  import type { PageProps } from './$types';
+  let { data }: PageProps = $props();
+  const { gallery, partners } = data;
 
   import microdata from '$lib/configs/microdata';
   const { email, telephone, address } = microdata.organization;
@@ -22,6 +32,8 @@
     loaded: () => (opacity = 1)
   };
 
+  const show = (x: number) => (x < 480 && 2) || (x < 1024 && 3) || 4;
+
   onMount(() => document?.lazyload.update());
 </script>
 
@@ -30,7 +42,7 @@
   {description} />
 
 <main itemprop="mainContentOfPage">
-  <header class="frame-xl">
+  <header class="frame-xl mb-8">
     <div class="grid w-full gap-8 pt-8 lg:grid-cols-12">
       <div class="mr-auto place-self-center lg:col-span-7 2xl:col-span-8">
         <h1
@@ -114,7 +126,7 @@
     </div>
   </header>
 
-  <div class={['readable', 'frame mb-16']}>
+  <div class="frame readable mb-8">
     <p class="leader">Основными направлениями деятельности компании являются:</p>
     <ul>
       <li>
@@ -132,7 +144,24 @@
       <li>Выполнение работ по зимнему уходу за монолитными железобетонными конструкциями;</li>
       <li>Судебная экспертиза.</li>
     </ul>
+  </div>
 
+  <CarouselKit
+    dataset={gallery}
+    href="/projects"
+    class={[
+      'relative frame-xl mb-4 overflow-hidden',
+      'rounded-xs shadow-sm shadow-gray-700 lg:rounded-sm dark:shadow-gray-900',
+      'hover:shadow-lg'
+    ]}
+    alt="реализованный объект"
+    {show}
+    duration={20000}
+    stream
+    progress
+    aria-label="недавние проекты" />
+
+  <div class="frame readable mb-16">
     <p class="leader">
       Наиболее известными среди реализованных нами объектов за последние несколько лет являются:
     </p>
@@ -156,13 +185,29 @@
       <li>выполнение строительного контроля при возведении памятника П.А. Столыпину.</li>
     </ul>
 
-    <p class="mt-8 text-sm text-accent">
-      <span class="text-xl font-bold">&#10004;</span> Любая информация, представленная на данном сайте,
-      носит исключительно информационный характер и ни при каких условиях не является публичной офертой,
-      определяемой положениями статьи 437 ГК РФ.
-    </p>
-  </div>
-  <div class="frame placeholders">
-    <TestimonialPlaceholder />
+    <div class="mt-8 flex flex-wrap justify-center gap-8 md:flex-nowrap md:gap-16">
+      <CarouselKit
+        dataset={partners}
+        class={[
+          'w-3xs shrink-0 place-self-center overflow-hidden sm:w-xs',
+          'rounded-xs shadow-sm shadow-gray-700 lg:rounded-sm dark:shadow-gray-900',
+          'hover:shadow-lg'
+        ]}
+        href="/partners"
+        alt="реализованный объект"
+        show={1}
+        duration={1000}
+        delay={5000}
+        autoplay
+        aria-label="партнёры" />
+      <div class="placeholders">
+        <p class="mb-8 text-sm text-accent">
+          <span class="text-xl font-bold">&#10004;</span> Любая информация, представленная на данном
+          сайте, носит исключительно информационный характер и ни при каких условиях не является публичной
+          офертой, определяемой положениями статьи 437 ГК РФ.
+        </p>
+        <TestimonialPlaceholder />
+      </div>
+    </div>
   </div>
 </main>

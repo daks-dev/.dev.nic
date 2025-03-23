@@ -4,7 +4,7 @@
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
-  const { thumbnail, source } = data;
+  const { modified, source } = data;
 
   const title = 'НИЦ «СЭ» • Судебная экспертиза';
   const description = 'Судебная экспертиза АО НИЦ «Строительная экспертиза»';
@@ -23,19 +23,21 @@
 
   <div class={['readable', 'frame flex flex-col md:block', 'sm:text-justify']}>
     <Lightbox
-      class={['order-2 mx-auto', 'md:order-none md:float-right md:my-1 md:mr-auto md:ml-8']}
+      class={[
+        'group relative',
+        'order-2 mx-auto mt-6',
+        'md:order-none md:float-right md:my-1 md:mr-auto md:ml-8'
+      ]}
       custom={{ overlay: 'overflow-offset' }}
       title="НИЦ «Строительная экспертиза»"
       description="свидетельство Палаты судебных экспертов НП «СУДЭКС»">
-      <div
-        slot="thumbnail"
-        class="group relative">
+      {#snippet thumbnail()}
         <Sign
           class="top-1 left-1"
           icon="ic:round-zoom-out-map"
           dark />
         <Figure
-          data={thumbnail}
+          data={modified}
           class={['relative', 'flex flex-col', 'items-center']}
           custom={{
             image: [
@@ -51,8 +53,8 @@
           href={source.src} />
         <link
           rel="thumbnailUrl"
-          href={thumbnail.src} />
-      </div>
+          href={modified.src} />
+      {/snippet}
       <img
         class="bg--loading bg-10% bg-center bg-no-repeat"
         src={source.src}

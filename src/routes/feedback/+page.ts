@@ -9,7 +9,7 @@ export const load: PageLoad = async () => ({
       })
     ).map(async (x) => (await x()) as ImageMetainfo)
   ),
-  thumbnails: await Promise.all(
+  modifieds: await Promise.all(
     Object.values(
       import.meta.glob('$lib/content/feedback/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
         query: { w: 320, aspect: '620:877', meta: true },

@@ -5,13 +5,15 @@
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
 
-  const { slug, title, description, component: Component, sources, thumbnails } = data;
-
-  /*
-      {#await promise then { default: Component }}
-        <Component />
-      {/await}
-  */
+  const {
+    slug,
+    title,
+    description,
+    content,
+    // component: Component,
+    sources,
+    modifieds
+  } = data;
 
   onMount(() => document?.lazyload.update());
 </script>
@@ -33,7 +35,7 @@
     {#if sources.length}
       <LightboxKit
         {sources}
-        {thumbnails}
+        {modifieds}
         class={['mt-1', 'flex shrink-0 flex-col justify-around gap-y-5', 'max-sm:order-last']}
         custom={{
           overlay: 'overflow-offset'
@@ -52,7 +54,7 @@
         scale />
     {/if}
     <div class="readable grow">
-      <Component />
+      {@html content}
     </div>
   </div>
 </main>

@@ -3,7 +3,7 @@
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
-  const { thumbnails, sources } = data;
+  const { modifieds, sources } = data;
 
   const title = 'НИЦ «СЭ» • Сертификация и аккредитация';
   const description = 'Сертификация и аккредитация | АО НИЦ «Строительная экспертиза»';
@@ -21,7 +21,7 @@
   <div class={['frame readable', 'flex flex-col md:block']}>
     <LightboxKit
       {sources}
-      {thumbnails}
+      {modifieds}
       class={[
         'order-2 mx-auto mt-16',
         'md:order-none md:my-1 md:mr-auto md:ml-8',

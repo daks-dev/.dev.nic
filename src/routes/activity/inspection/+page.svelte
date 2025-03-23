@@ -3,7 +3,7 @@
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
-  const { dataset, sources, thumbnails } = data;
+  const { dataset, sources, modifieds } = data;
 
   const title = 'НИЦ «СЭ» • Обследование зданий и сооружений';
   const description = 'Обследование зданий и сооружений | АО НИЦ «Строительная экспертиза»';
@@ -69,7 +69,7 @@
 
   <LightboxKit
     {sources}
-    {thumbnails}
+    {modifieds}
     class="frame mt-16 gap-4 lg:gap-8"
     custom={{
       overlay: 'overflow-offset'

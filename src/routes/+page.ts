@@ -1,18 +1,18 @@
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async () => ({
-  sources: await Promise.all(
+  gallery: await Promise.all(
     Object.values(
       import.meta.glob('$lib/assets/images/gallery/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
-        query: { meta: true },
+        query: { w: 224, aspect: '16:9', meta: true },
         import: 'default'
       })
     ).map(async (x) => (await x()) as ImageMetainfo)
   ),
-  modifieds: await Promise.all(
+  partners: await Promise.all(
     Object.values(
-      import.meta.glob('$lib/assets/images/gallery/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
-        query: { w: 320, aspect: '1:1', meta: true },
+      import.meta.glob('$lib/content/partners/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
+        query: { w: 224, aspect: '480:250', meta: true },
         import: 'default'
       })
     ).map(async (x) => (await x()) as ImageMetainfo)

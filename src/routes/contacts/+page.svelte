@@ -12,7 +12,7 @@
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
-  const { thumbnail, sources } = data;
+  const { sources, modified } = data;
 
   import microdata from '$lib/configs/microdata';
 
@@ -71,14 +71,14 @@
       loader={() => document?.lazyload.update()}
       title="«Строительная экспертиза»"
       description="АО Научно Исследовательский Центр">
-      <svelte:fragment slot="thumbnail">
+      {#snippet thumbnail()}
         <LightboxThumbnail>
           <Sign
             class="top-1 left-1"
             icon="ic:round-zoom-out-map"
             dark />
           <Figure
-            data={thumbnail}
+            data={modified}
             class={['relative', 'flex flex-col', 'items-center']}
             custom={{
               image: [
@@ -97,9 +97,9 @@
           {/each}
           <link
             rel="thumbnailUrl"
-            href={thumbnail.src} />
+            href={modified.src} />
         </LightboxThumbnail>
-      </svelte:fragment>
+      {/snippet}
       {#each sources as source}
         <LightboxModal>
           <img
