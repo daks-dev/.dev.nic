@@ -11,7 +11,7 @@
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
-  const { gallery, partners } = data;
+  const { gallery, customers } = data;
 
   import microdata from '$lib/configs/microdata';
   const { email, telephone, address } = microdata.organization;
@@ -185,11 +185,11 @@
       <li>выполнение строительного контроля при возведении памятника П.А. Столыпину.</li>
     </ul>
 
-    <div class="mt-8 flex flex-wrap justify-center gap-8 md:flex-nowrap md:gap-16">
+    <div class="mt-8 flex flex-wrap justify-center gap-16 sm:flex-nowrap">
       <CarouselKit
-        dataset={partners}
+        dataset={customers}
         class={[
-          'w-3xs shrink-0 place-self-center overflow-hidden sm:w-xs',
+          'w-56 shrink-0 place-self-center overflow-hidden',
           'rounded-xs shadow-sm shadow-gray-700 lg:rounded-sm dark:shadow-gray-900',
           'hover:shadow-lg'
         ]}
