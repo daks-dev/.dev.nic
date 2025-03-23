@@ -1,9 +1,12 @@
+<script
+  lang="ts"
+  module>
+  let mode = $state<'app' | 'list'>('app');
+</script>
+
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { Figure, FormattedDate, Sign, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
-  import { ListMode } from '$lib/components';
-
-  import { modes } from '$lib/state';
+  import { Figure, ListMode, Sign, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
   import placeholder from '$lib/assets/images/cube.webp?w=288&aspect=16:9&fit=contain&meta';
 
@@ -28,13 +31,13 @@
 
   {#if items.length}
     <ListMode
-      bind:mode={modes.articles}
+      bind:mode
       class="frame -mt-12 mb-3"
       length={items.length}
       app
       list />
 
-    {#if modes.articles === 'app'}
+    {#if mode === 'app'}
       <div
         class={[
           'frame',

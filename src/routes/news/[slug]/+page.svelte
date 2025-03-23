@@ -10,7 +10,6 @@
     title,
     description,
     content,
-    // component: Component,
     sources,
     modifieds
   } = data;

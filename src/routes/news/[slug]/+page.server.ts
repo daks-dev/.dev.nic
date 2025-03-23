@@ -51,7 +51,6 @@ export const load: PageServerLoad = async ({ params }) => {
         title,
         description,
         content,
-        // component,
         sources,
         modifieds
       };

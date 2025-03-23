@@ -159,7 +159,7 @@
     duration={20000}
     stream
     progress
-    aria-label="недавние проекты" />
+    aria-label="реализованные проекты ниц «строительная экспертиза»" />
 
   <div class="frame readable mb-16">
     <p class="leader">
@@ -189,17 +189,17 @@
       <CarouselKit
         dataset={customers}
         class={[
-          'w-56 shrink-0 place-self-center overflow-hidden',
+          'w-60 shrink-0 place-self-center overflow-hidden',
           'rounded-xs shadow-sm shadow-gray-700 lg:rounded-sm dark:shadow-gray-900',
           'hover:shadow-lg'
         ]}
-        href="/partners"
+        href="/feedback"
         alt="реализованный объект"
         show={1}
         duration={1000}
         delay={5000}
         autoplay
-        aria-label="партнёры" />
+        aria-label="отзывы заказчиков ниц «строительная экспертиза»" />
       <div class="placeholders">
         <p class="mb-8 text-sm text-accent">
           <span class="text-xl font-bold">&#10004;</span> Любая информация, представленная на данном

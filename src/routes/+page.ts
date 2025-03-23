@@ -17,7 +17,7 @@ export const load: PageLoad = async () => ({
     Object.values(
       import.meta.glob('$lib/content/customers/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
         query: {
-          aspect: '224:192',
+          aspect: '240:192',
           fit: 'contain',
           flatten: true,
           background: '#fff',
@@ -26,8 +26,8 @@ export const load: PageLoad = async () => ({
         import: 'default'
       })
     ).map(async (x) => (await x()) as ImageMetainfo)
-  ),
-  partners: await Promise.all(
+  )
+  /*partners: await Promise.all(
     Object.values(
       import.meta.glob('$lib/content/partners/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
         query: {
@@ -38,5 +38,5 @@ export const load: PageLoad = async () => ({
         import: 'default'
       })
     ).map(async (x) => (await x()) as ImageMetainfo)
-  )
+  )*/
 });
