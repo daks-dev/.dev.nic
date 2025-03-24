@@ -65,17 +65,17 @@
       {microdata} />
 
     <LightboxList
-      class="group relative max-sm:hidden md:shrink-0"
+      class="max-sm:hidden md:shrink-0"
       custom={{ overlay: 'overflow-offset' }}
       options={{ behaviour: 'loop' }}
       loader={() => document?.lazyload.update()}
       title="«Строительная экспертиза»"
       description="АО Научно Исследовательский Центр">
       {#snippet thumbnail()}
-        <LightboxThumbnail>
+        <LightboxThumbnail class="group relative mr-2">
           <Sign
-            class="top-1 left-1"
             icon="ic:round-zoom-out-map"
+            class="top-1 left-1"
             dark />
           <Figure
             data={modified}
