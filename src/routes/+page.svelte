@@ -4,6 +4,7 @@
   import {
     Icon,
     CarouselKit,
+    Sign,
     TestimonialPlaceholder,
     Video,
     YandexMetrikaHit
@@ -118,7 +119,7 @@
             'lazy',
             'h-auto w-full max-w-full',
             'rounded-lg border border-gray-200 dark:border-gray-700',
-            'transition-opacity duration-3000 ease-in'
+            'transition-opacity duration-2000 ease-in'
           ]}
           style="opacity:{opacity}"
           {...video} />
@@ -150,6 +151,7 @@
     dataset={gallery}
     href="/projects"
     class={[
+      'group',
       'relative frame-xl mb-4 overflow-hidden',
       'rounded-xs shadow-sm shadow-gray-700 lg:rounded-sm dark:shadow-gray-900',
       'hover:shadow-lg'
@@ -159,7 +161,16 @@
     duration={20000}
     stream
     progress
-    aria-label="реализованные проекты ниц «строительная экспертиза»" />
+    checked="text-slate-700"
+    aria-label="реализованные проекты ниц «строительная экспертиза»">
+    {#snippet after()}
+      <Sign
+        icon="mdi:link-variant"
+        class="top-1/2 left-1/2 h-10 w-10 -translate-1/2 opacity-50"
+        link
+        dark />
+    {/snippet}
+  </CarouselKit>
 
   <div class="frame readable mb-16">
     <p class="leader">
@@ -189,6 +200,7 @@
       <CarouselKit
         dataset={customers}
         class={[
+          'group',
           'w-60 shrink-0 place-self-center overflow-hidden',
           'rounded-xs shadow-sm shadow-gray-700 lg:rounded-sm dark:shadow-gray-900',
           'hover:shadow-lg'
@@ -199,7 +211,15 @@
         duration={1000}
         delay={5000}
         autoplay
-        aria-label="отзывы заказчиков ниц «строительная экспертиза»" />
+        aria-label="отзывы заказчиков ниц «строительная экспертиза»">
+        {#snippet after()}
+          <Sign
+            icon="mdi:link-variant"
+            class="top-1 left-1"
+            link
+            dark />
+        {/snippet}
+      </CarouselKit>
       <div class="placeholders">
         <p class="mb-8 text-sm text-accent">
           <span class="text-xl font-bold">&#10004;</span> Любая информация, представленная на данном
