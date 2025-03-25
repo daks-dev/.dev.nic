@@ -2,7 +2,7 @@ import type { PageLoad } from './$types';
 
 import placeholder from '$lib/assets/images/cube.webp?w=288&aspect=16:9&fit=contain&meta';
 
-type Data = {
+type DataLoad = {
   metadata: {
     title: string;
     description: string;
@@ -12,7 +12,7 @@ type Data = {
 };
 
 const promises = {
-  mds: import.meta.glob('$lib/content/articles/**/index.(svx|mdx|md)'),
+  mds: import.meta.glob('$lib/content/articles/**/index.(svx|svelte\.md)'),
   images: import.meta.glob(
     '$lib/content/articles/**/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)',
     {
@@ -36,7 +36,7 @@ export const load: PageLoad = async () => {
           images.push((await promises.images[image]()) as ImageMetadata);
         const {
           metadata: { title, description, published, poster = images.length ? 0 : false }
-        } = (await promises.mds[path]()) as Data;
+        } = (await promises.mds[path]()) as DataLoad;
         return {
           slug,
           title,

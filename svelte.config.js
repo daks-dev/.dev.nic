@@ -19,9 +19,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  extensions: ['.svelte', '.svx', '.mdx', '.md'],
+  extensions: ['.svelte', '.svx', '.svelte.md'],
 
-  preprocess: [mdsvex({ extensions: ['.svx', '.mdx', '.md'] }), vitePreprocess()],
+  preprocess: [mdsvex({ extensions: ['.svx', '.svelte.md'] }), vitePreprocess()],
 
   vitePlugin: {
     inspector: {

@@ -1,6 +1,6 @@
 import type { PageLoad } from './$types';
 
-type Data = {
+type DataLoad = {
   metadata: {
     title: string;
     description: string;
@@ -9,7 +9,7 @@ type Data = {
 };
 
 const promises = {
-  mds: import.meta.glob('$lib/content/news/**/index.(svx|mdx|md)'),
+  mds: import.meta.glob('$lib/content/news/**/index.(svx|svelte\.md)'),
   images: import.meta.glob('$lib/content/news/**/*.(avif|gif|heic|heif|jpeg|jpg|png|tiff|webp)', {
     query: { w: 288, aspect: '16:9', meta: true },
     import: 'default'
@@ -30,7 +30,7 @@ export const load: PageLoad = async () => {
           images.push((await promises.images[image]()) as ImageMetadata);
         const {
           metadata: { title, description, poster = images.length ? 0 : false }
-        } = (await promises.mds[path]()) as Data;
+        } = (await promises.mds[path]()) as DataLoad;
         return {
           slug,
           title,

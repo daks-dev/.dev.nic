@@ -1,12 +1,17 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import { LightboxKit, FormattedDate, YandexMetrikaHit } from '@daks.dev/svelte.sdk';
 
   import type { PageProps } from './$types';
   let { data }: PageProps = $props();
-  const { slug, title, description, content, sources, modifieds } = data;
-
-  onMount(() => document?.lazyload.update());
+  const {
+    slug,
+    title,
+    description,
+    Component,
+    // content,
+    sources,
+    modifieds
+  } = data;
 </script>
 
 <YandexMetrikaHit
@@ -45,7 +50,7 @@
         scale />
     {/if}
     <div class="readable grow">
-      {@html content}
+      <Component />
     </div>
   </div>
 </main>

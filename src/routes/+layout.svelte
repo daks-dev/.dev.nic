@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { BROWSER } from 'esm-env';
+  import { browser } from '$app/environment';
   import {
     lazyload,
     Head,
@@ -17,7 +17,7 @@
 
   import { app, nav, draver } from '$lib/configs';
 
-  if (BROWSER) document.lazyload ??= lazyload();
+  if (browser) document.lazyload ??= lazyload();
 </script>
 
 <Head {app} />
